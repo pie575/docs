@@ -1,0 +1,40 @@
+---
+title: "Blocs de code"
+description: "Afficher du code inline et des blocs de code"
+icon: 'code'
+---
+
+<div id="inline-code">
+  ## Code en ligne
+</div>
+
+Pour indiquer qu’un `mot` ou une `expression` est du code, entourez-les d’accents graves (`).
+
+```
+Pour désigner un `mot` ou une `phrase` comme du code, entourez-le de backticks (`).
+```
+
+
+<div id="code-blocks">
+  ## Blocs de code
+</div>
+
+Utilisez des [blocs de code délimités](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) en encadrant le code de trois accents graves, puis indiquez immédiatement après les premiers accents le langage de programmation de votre fragment pour activer la coloration syntaxique. En option, vous pouvez aussi ajouter un nom pour votre code après le langage de programmation.
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Bonjour, monde !");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Bonjour le monde !");
+    }
+}
+```
+````

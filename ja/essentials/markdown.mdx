@@ -1,0 +1,109 @@
+---
+title: "Markdown の構文"
+description: "標準的な Markdown におけるテキスト、title、スタイル"
+icon: 'text-size'
+---
+
+<div id="titles">
+  ## タイトル
+</div>
+
+セクション見出しに適しています。
+
+```md
+<div id="titles">
+  ## タイトル
+</div>
+
+```
+
+
+<div id="subtitles">
+  ### 小見出し
+</div>
+
+セクション内の見出しに最適です。
+
+```md
+### サブタイトル
+```
+
+<Tip>
+  各**title**と**subtitle**はアンカーを生成し、右側の目次にも表示されます。
+</Tip>
+
+
+<div id="text-formatting">
+  ## テキストの書式設定
+</div>
+
+ほとんどのMarkdownの書式をサポートしています。テキストの前後に `**`、`_`、または `~` を付けるだけで書式設定できます。
+
+| スタイル      | 書き方               | 結果               |
+| ------------- | -------------------- | ------------------ |
+| 太字          | `**bold**`           | **bold**           |
+| 斜体          | `_italic_`           | _italic_           |
+| 取り消し線    | `~strikethrough~`    | ~strikethrough~    |
+
+これらは組み合わせ可能です。たとえば、`**_bold and italic_**` と書くと、**_bold and italic_** になります。
+
+上付き文字と下付き文字にはHTMLを使用します。つまり、テキストを `<sup>` または `<sub>` で囲みます。
+
+| 文字の位置    | 書き方                      | 結果                      |
+| ------------- | --------------------------- | ------------------------- |
+| 上付き        | `<sup>superscript</sup>`    | <sup>superscript</sup>    |
+| 下付き        | `<sub>subscript</sub>`      | <sub>subscript</sub>      |
+
+<div id="linking-to-pages">
+  ## ページへのリンク
+</div>
+
+テキストを `[]()` で囲むとリンクを追加できます。たとえば、`[link to google](https://google.com)` と書くと、[link to google](https://google.com) になります。
+
+ドキュメント内のページへのリンクはルート相対にする必要があります。基本的には、フォルダーパス全体を含めてください。たとえば、`[link to text](/writing-content/text)` は、コンポーネントセクション内の「Text」ページへのリンクになります。
+
+`[link to text](../text)` のような相対リンクは、最適化しにくいため読み込みが遅くなります。
+
+<div id="blockquotes">
+  ## 引用ブロック
+</div>
+
+<div id="singleline">
+  ### 1行
+</div>
+
+ブロック引用を作成するには、段落の先頭に `>` を付けます。
+
+> ドロシーは彼女の城にある多くの美しい部屋を通り抜けて、彼女の後を追いました。
+
+```md
+> ドロシーは彼女の後について、城の美しい部屋をいくつも通り抜けた。
+```
+
+
+<div id="multiline">
+  ### 複数行
+</div>
+
+> ドロシーは、彼女の城の美しい部屋の数々を彼女の後について回った。
+>
+> 魔女は、鍋ややかんを洗い、床を掃き、火に薪をくべ続けるよう彼女に命じた。
+
+```md
+> ドロシーは城の美しい部屋の数々を通って彼女の後についていった。
+>
+> 魔女は彼女に鍋や薬缶を洗い、床を掃き、薪で火を絶やさないよう命じた。
+```
+
+
+<div id="latex">
+  ### LaTeX
+</div>
+
+Mintlify は <Latex>コンポーネント</Latex>を通じて [LaTeX](https://www.latex-project.org) をサポートしています。
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

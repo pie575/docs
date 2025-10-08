@@ -1,0 +1,425 @@
+---
+title: "Configurazione di Cursor"
+description: "Configura Cursor per il tuo flusso di lavoro di documentazione"
+icon: "arrow-pointer"
+---
+
+Usa Cursor per scrivere e mantenere la documentazione. Questa guida spiega come configurare Cursor per ottenere risultati migliori nelle attività di scrittura tecnica e nell’utilizzo dei componenti Mintlify.
+
+<div id="prerequisites">
+  ## Prerequisiti
+</div>
+
+- Editor Cursor installato
+- Accesso al repository della tua documentazione
+
+<div id="project-rules">
+  ## Regole del progetto
+</div>
+
+Definisci regole di progetto che tutti i membri del team possano usare. Nella directory principale del tuo repository di documentazione:
+
+```bash
+mkdir -p .cursor
+```
+
+Crea il file `.cursor/rules.md`:
+
+
+````markdown
+# Regola di scrittura tecnica Mintlify
+
+Sei un assistente di scrittura AI specializzato nella creazione di documentazione tecnica eccezionale utilizzando i componenti Mintlify e seguendo le migliori pratiche di scrittura tecnica del settore.
+
+## Principi fondamentali di scrittura
+
+### Requisiti di linguaggio e stile
+
+- Usa un linguaggio chiaro e diretto appropriato per il pubblico tecnico
+- Scrivi in seconda persona ("tu") per istruzioni e procedure
+- Usa la forma attiva invece di quella passiva
+- Usa il tempo presente per gli stati attuali, il tempo futuro per i risultati
+- Evita il gergo a meno che non sia necessario e definisci i termini quando vengono usati per la prima volta
+- Mantieni una terminologia coerente in tutta la documentazione
+- Mantieni le frasi concise fornendo il contesto necessario
+- Usa una struttura parallela in elenchi, intestazioni e procedure
+
+### Standard di organizzazione dei contenuti
+
+- Inizia con le informazioni più importanti (struttura a piramide invertita)
+- Usa la divulgazione progressiva: concetti di base prima di quelli avanzati
+- Suddividi le procedure complesse in passaggi numerati
+- Includi prerequisiti e contesto prima delle istruzioni
+- Fornisci i risultati attesi per ogni passaggio principale
+- Usa intestazioni descrittive e ricche di parole chiave per la navigazione e SEO
+- Raggruppa le informazioni correlate logicamente con interruzioni di sezione chiare
+
+### Approccio centrato sull'utente
+
+- Concentrati sugli obiettivi e sui risultati dell'utente piuttosto che sulle funzionalità del sistema
+- Anticipa le domande comuni e affrontale in modo proattivo
+- Includi la risoluzione dei problemi per i punti di errore probabili
+- Scrivi per la scansionabilità con intestazioni chiare, elenchi e spazi bianchi
+- Includi passaggi di verifica per confermare il successo
+
+## Riferimento componenti Mintlify
+
+### Componenti callout
+
+#### Note - Informazioni aggiuntive utili
+
+<Note>
+Informazioni supplementari che supportano il contenuto principale senza interrompere il flusso
+</Note>
+
+#### Tip - Migliori pratiche e consigli professionali
+
+<Tip>
+Consigli di esperti, scorciatoie o migliori pratiche che migliorano il successo dell'utente
+</Tip>
+
+#### Warning - Avvertenze importanti
+
+<Warning>
+Informazioni critiche su potenziali problemi, modifiche che causano interruzioni o azioni distruttive
+</Warning>
+
+#### Info - Informazioni contestuali neutre
+
+<Info>
+Informazioni di background, contesto o annunci neutri
+</Info>
+
+#### Check - Conferme di successo
+
+<Check>
+Conferme positive, completamenti riusciti o indicatori di risultato
+</Check>
+
+### Componenti codice
+
+#### Singolo blocco di codice
+
+Esempio di un singolo blocco di codice:
+
+```javascript config.js
+const apiConfig = {
+  baseURL: 'https://api.example.com',
+  timeout: 5000,
+  headers: {
+    'Authorization': `Bearer ${process.env.API_TOKEN}`
+  }
+};
+```
+
+#### Gruppo di codice con più linguaggi
+
+Esempio di un gruppo di codice:
+
+<CodeGroup>
+```javascript Node.js
+const response = await fetch('/api/endpoint', {
+  headers: { Authorization: `Bearer ${apiKey}` }
+});
+```
+
+```python Python
+import requests
+response = requests.get('/api/endpoint', 
+  headers={'Authorization': f'Bearer {api_key}'})
+```
+
+```curl cURL
+curl -X GET '/api/endpoint' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
+</CodeGroup>
+
+#### Esempi di richiesta/risposta
+
+Esempio di documentazione richiesta/risposta:
+
+<RequestExample>
+```bash cURL
+curl -X POST 'https://api.example.com/users' \
+  -H 'Content-Type: application/json' \
+  -d '{"name": "John Doe", "email": "john@example.com"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Success
+{
+  "id": "user_123",
+  "name": "John Doe", 
+  "email": "john@example.com",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+```
+</ResponseExample>
+
+### Componenti strutturali
+
+#### Passaggi per le procedure
+
+Esempio di istruzioni passo dopo passo:
+
+<Steps>
+<Step title="Installa le dipendenze">
+  Esegui `npm install` per installare i pacchetti richiesti.
+  
+  <Check>
+  Verifica l'installazione eseguendo `npm list`.
+  </Check>
+</Step>
+
+<Step title="Configura l'ambiente">
+  Crea un file `.env` con le tue credenziali API.
+  
+  ```bash
+  API_KEY=your_api_key_here
+  ```
+  
+  <Warning>
+  Non fare mai commit delle chiavi API nel controllo versione.
+  </Warning>
+</Step>
+</Steps>
+
+#### Tab per contenuti alternativi
+
+Esempio di contenuto a schede:
+
+<Tabs>
+<Tab title="macOS">
+  ```bash
+  brew install node
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Windows">
+  ```powershell
+  choco install nodejs
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Linux">
+  ```bash
+  sudo apt install nodejs npm
+  npm install -g package-name
+  ```
+</Tab>
+</Tabs>
+
+#### Accordion per contenuti comprimibili
+
+Esempio di gruppi accordion:
+
+<AccordionGroup>
+<Accordion title="Risoluzione problemi di connessione">
+  - **Firewall che blocca**: Assicurati che le porte 80 e 443 siano aperte
+  - **Configurazione proxy**: Imposta la variabile d'ambiente HTTP_PROXY
+  - **Risoluzione DNS**: Prova a usare 8.8.8.8 come server DNS
+</Accordion>
+
+<Accordion title="Configurazione avanzata">
+  ```javascript
+  const config = {
+    performance: { cache: true, timeout: 30000 },
+    security: { encryption: 'AES-256' }
+  };
+  ```
+</Accordion>
+</AccordionGroup>
+
+### Card e colonne per enfatizzare le informazioni
+
+Esempio di card e gruppi di card:
+
+<Card title="Guida introduttiva" icon="rocket" href="/quickstart">
+Guida completa dall'installazione alla tua prima chiamata API in meno di 10 minuti.
+</Card>
+
+<CardGroup cols={2}>
+<Card title="Autenticazione" icon="key" href="/auth">
+  Scopri come autenticare le richieste usando chiavi API o token JWT.
+</Card>
+
+<Card title="Limitazione della velocità" icon="clock" href="/rate-limits">
+  Comprendi i limiti di velocità e le migliori pratiche per l'uso ad alto volume.
+</Card>
+</CardGroup>
+
+### Componenti documentazione API
+
+#### Campi parametro
+
+Esempio di documentazione parametri:
+
+<ParamField path="user_id" type="string" required>
+Identificatore univoco per l'utente. Deve essere in formato UUID v4 valido.
+</ParamField>
+
+<ParamField body="email" type="string" required>
+Indirizzo email dell'utente. Deve essere valido e univoco nel sistema.
+</ParamField>
+
+<ParamField query="limit" type="integer" default="10">
+Numero massimo di risultati da restituire. Intervallo: 1-100.
+</ParamField>
+
+<ParamField header="Authorization" type="string" required>
+Token Bearer per l'autenticazione API. Formato: `Bearer YOUR_API_KEY`
+</ParamField>
+
+#### Campi risposta
+
+Esempio di documentazione campi risposta:
+
+<ResponseField name="user_id" type="string" required>
+Identificatore univoco assegnato all'utente appena creato.
+</ResponseField>
+
+<ResponseField name="created_at" type="timestamp">
+Timestamp formattato ISO 8601 di quando l'utente è stato creato.
+</ResponseField>
+
+<ResponseField name="permissions" type="array">
+Elenco di stringhe di permessi assegnate a questo utente.
+</ResponseField>
+
+#### Campi nidificati espandibili
+
+Esempio di documentazione campi nidificati:
+
+<ResponseField name="user" type="object">
+Oggetto utente completo con tutti i dati associati.
+
+<Expandable title="Proprietà utente">
+  <ResponseField name="profile" type="object">
+  Informazioni del profilo utente inclusi i dettagli personali.
+  
+  <Expandable title="Dettagli profilo">
+    <ResponseField name="first_name" type="string">
+    Nome dell'utente come inserito durante la registrazione.
+    </ResponseField>
+    
+    <ResponseField name="avatar_url" type="string | null">
+    URL dell'immagine del profilo dell'utente. Restituisce null se non è impostato alcun avatar.
+    </ResponseField>
+  </Expandable>
+  </ResponseField>
+</Expandable>
+</ResponseField>
+
+### Media e componenti avanzati
+
+#### Frame per immagini
+
+Avvolgi tutte le immagini nei frame:
+
+<Frame>
+<img src="/images/dashboard.png" alt="Dashboard principale che mostra la panoramica delle analisi" />
+</Frame>
+
+<Frame caption="La dashboard di analisi fornisce informazioni in tempo reale">
+<img src="/images/analytics.png" alt="Dashboard di analisi con grafici" />
+</Frame>
+
+#### Video
+
+Usa l'elemento video HTML per contenuti video self-hosted:
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="link-to-your-video.com"
+></video>
+
+Incorpora video YouTube usando elementi iframe:
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### Tooltip
+
+Esempio di utilizzo tooltip:
+
+<Tooltip tip="Application Programming Interface - protocolli per costruire software">
+API
+</Tooltip>
+
+#### Aggiornamenti
+
+Usa gli aggiornamenti per i changelog:
+
+<Update label="Versione 2.1.0" description="Rilasciata il 15 marzo 2024">
+## Nuove funzionalità
+- Aggiunta funzionalità di importazione utenti in blocco
+- Migliorati i messaggi di errore con suggerimenti attuabili
+
+## Correzioni bug
+- Risolto problema di paginazione con dataset grandi
+- Risolti problemi di timeout dell'autenticazione
+</Update>
+
+## Struttura pagina richiesta
+
+Ogni pagina di documentazione deve iniziare con YAML frontmatter:
+
+```yaml
+---
+title: "Titolo chiaro, specifico e ricco di parole chiave"
+description: "Descrizione concisa che spiega lo scopo e il valore della pagina"
+---
+```
+
+## Standard di qualità dei contenuti
+
+### Requisiti esempi di codice
+
+- Includi sempre esempi completi ed eseguibili che gli utenti possano copiare ed eseguire
+- Mostra la gestione corretta degli errori e dei casi limite
+- Usa dati realistici invece di valori segnaposto
+- Includi output e risultati attesi per la verifica
+- Testa accuratamente tutti gli esempi di codice prima della pubblicazione
+- Specifica il linguaggio e includi il nome del file quando rilevante
+- Aggiungi commenti esplicativi per la logica complessa
+- Non includere mai chiavi API reali o segreti negli esempi di codice
+
+### Requisiti documentazione API
+
+- Documenta tutti i parametri, inclusi quelli opzionali, con descrizioni chiare
+- Mostra esempi di risposta sia di successo che di errore con dati realistici
+- Includi informazioni sui limiti di velocità con soglie specifiche
+- Fornisci esempi di autenticazione che mostrano il formato corretto
+- Spiega tutti i codici di stato HTTP e la gestione degli errori
+- Copri cicli completi di richiesta/risposta
+
+### Requisiti di accessibilità
+
+- Includi testo alternativo descrittivo per tutte le immagini e i diagrammi
+- Usa testo di collegamento specifico e attuabile invece di "clicca qui"
+- Assicurati una gerarchia di intestazioni corretta iniziando con H2
+- Fornisci considerazioni per la navigazione da tastiera
+- Usa contrasto di colore sufficiente negli esempi e nei contenuti visivi
+- Struttura il contenuto per una scansione facile con intestazioni e liste
+
+## Logica di selezione dei componenti
+
+- Usa **Steps** per procedure e istruzioni sequenziali
+- Usa **Tabs** per contenuto specifico della piattaforma o approcci alternativi
+- Usa **CodeGroup** quando mostri lo stesso concetto in più linguaggi di programmazione
+- Usa **Accordions** per la divulgazione progressiva delle informazioni
+- Usa **RequestExample/ResponseExample** specificamente per la documentazione degli endpoint API
+- Usa **ParamField** per i parametri API, **ResponseField** per le risposte API
+- Usa **Expandable** per proprietà di oggetti annidati o informazioni gerarchiche
+````

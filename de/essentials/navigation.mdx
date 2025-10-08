@@ -1,0 +1,92 @@
+---
+title: "Navigation"
+description: "Das Feld navigation in docs.json definiert die Seiten, die im Navigationsmenü angezeigt werden"
+icon: 'map'
+---
+
+Das Navigationsmenü ist die Liste von Links auf jeder Website.
+
+Sie werden vermutlich `docs.json` jedes Mal aktualisieren, wenn Sie eine neue Seite hinzufügen. Seiten werden nicht automatisch angezeigt.
+
+<div id="navigation-syntax">
+  ## Navigationssyntax
+</div>
+
+Unsere Navigationssyntax ist rekursiv, das heißt, Sie können verschachtelte Navigationsgruppen erstellen. Sie müssen `.mdx` nicht in Seitennamen angeben.
+
+<CodeGroup>
+
+```json Regular Navigation
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Getting Started",
+          "pages": ["quickstart"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+```json Nested Navigation
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Getting Started",
+          "pages": [
+            "quickstart",
+            {
+              "group": "Nested Reference Pages",
+              "pages": ["nested-reference-page"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+</CodeGroup>
+
+<div id="folders">
+  ## Ordner
+</div>
+
+Legen Sie Ihre MDX-Dateien einfach in Ordner und aktualisieren Sie die Pfade in `docs.json`.
+
+Wenn Sie beispielsweise eine Seite unter `https://yoursite.com/your-folder/your-page` bereitstellen möchten, erstellen Sie einen Ordner namens `your-folder`, der eine MDX-Datei mit dem Namen `your-page.mdx` enthält.
+
+<Warning>
+  Sie können `api` nicht als Ordnernamen verwenden, es sei denn, Sie verschachteln ihn in einem anderen Ordner. Mintlify nutzt Next.js, das den obersten Ordner `api` für interne Serveraufrufe reserviert. Ein Ordnername wie `api-reference` wäre zulässig.
+</Warning>
+
+```json Navigation With Folder
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Gruppenname",
+          "pages": ["your-folder/your-page"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+<div id="hidden-pages">
+  ## Versteckte Seiten
+</div>
+
+MDX-Dateien, die nicht in `docs.json` aufgeführt sind, erscheinen nicht in der Seitenleiste, sind jedoch über die Suche und per direktem Link zugänglich.

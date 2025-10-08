@@ -1,0 +1,40 @@
+---
+title: 'Blocos de código'
+description: 'Exibir código embutido e blocos de código'
+icon: 'code'
+---
+
+<div id="inline-code">
+  ## Código inline
+</div>
+
+Para indicar uma `palavra` ou `frase` como código, coloque-a entre crases (`).
+
+```
+Para marcar uma `palavra` ou `frase` como código, coloque-a entre crases (`).
+```
+
+
+<div id="code-blocks">
+  ## Blocos de código
+</div>
+
+Use [blocos de código cercados](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) envolvendo o código em três crases e, em seguida, coloque a linguagem de programação do seu snippet logo após as crases iniciais para obter realce de sintaxe. Opcionalmente, você também pode indicar o nome do seu arquivo após a linguagem de programação.
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+```
+````

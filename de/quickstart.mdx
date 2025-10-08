@@ -1,0 +1,90 @@
+---
+title: "Quickstart Yay"
+description: "Erstellen Sie in wenigen Minuten großartige Dokumentation"
+---
+
+<div id="get-started-in-three-steps">
+  ## In drei Schritten loslegen
+</div>
+
+Starten Sie Ihre Dokumentationsseite lokal und nehmen Sie Ihre erste Anpassung vor.
+
+<div id="step-1-set-up-your-local-environment">
+  ### Schritt 1: Lokale Umgebung einrichten
+</div>
+
+<AccordionGroup>
+  <Accordion icon="copy" title="Dokumentation lokal klonen">
+    Während des Onboardings haben Sie ein GitHub-Repository mit Ihren Docs-Inhalten erstellt, falls Sie noch keines hatten. Einen Link zu diesem Repository finden Sie in Ihrem [Dashboard](https://dashboard.mintlify.com).
+
+    Um das Repository lokal zu klonen, damit Sie Änderungen an Ihren Docs vornehmen und in der Vorschau ansehen können, folgen Sie der Anleitung [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) in den GitHub-Dokumenten.
+  </Accordion>
+
+  <Accordion icon="rectangle-terminal" title="Vorschau-Server starten">
+    1. Installieren Sie die Mintlify-CLI: `npm i -g mint`
+    2. Navigieren Sie zu Ihrem Docs-Verzeichnis und führen Sie aus: `mint dev`
+    3. Öffnen Sie `http://localhost:3000`, um Ihre Docs live zu sehen!
+
+    <Tip>Ihre Vorschau aktualisiert sich automatisch, während Sie Dateien bearbeiten.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-2-deploy-your-changes">
+  ### Schritt 2: Deine Änderungen deployen
+</div>
+
+<AccordionGroup>
+  <Accordion icon="github" title="Install our GitHub app">
+    Installiere die Mintlify GitHub-App über dein [Dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+
+    Unsere GitHub-App deployt deine Änderungen automatisch auf deiner Docs-Site, sodass du Deployments nicht selbst verwalten musst.
+  </Accordion>
+
+  <Accordion icon="palette" title="Update your site name and colors">
+    Als ersten Schritt aktualisieren wir den Namen und die Farben deiner Docs-Site.
+
+    1. Öffne `docs.json` in deinem Editor.
+    2. Ändere das Feld `"name"` auf den Namen deines Projekts.
+    3. Aktualisiere `"colors"`, damit sie zu deiner Marke passen.
+    4. Speichere und sieh dir deine Änderungen sofort unter `http://localhost:3000` an.
+
+    <Tip>Ändere testweise die Primärfarbe, um den Unterschied sofort zu sehen!</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-3-go-live">
+  ### Schritt 3: Live gehen
+</div>
+
+<Accordion icon="rocket" title="Publish your docs">
+  1. Committen und pushen Sie Ihre Änderungen.
+  2. Ihre Docs werden aktualisiert und sind in wenigen Augenblicken live!
+</Accordion>
+
+<div id="next-steps">
+  ## Nächste Schritte
+</div>
+
+Jetzt, da deine Docs laufen, erkunde diese zentralen Funktionen:
+
+<CardGroup cols={2}>
+  <Card title="Inhalte schreiben" icon="pen-to-square" href="/de/essentials/markdown">
+    Lerne die MDX-Syntax und beginne mit dem Schreiben deiner Dokumentation.
+  </Card>
+
+  <Card title="Stil anpassen" icon="palette" href="/de/essentials/settings">
+    Passe deine Docs optimal an deine Marke an.
+  </Card>
+
+  <Card title="Codebeispiele hinzufügen" icon="square-code" href="/de/essentials/code">
+    Füge Codeblöcke mit Syntax‑Highlighting hinzu.
+  </Card>
+
+  <Card title="API-Dokumentation" icon="code" href="/de/api-reference/introduction">
+    Generiere API-Dokumentation automatisch aus OpenAPI-Spezifikationen.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Brauchst du Hilfe?** Sieh dir unsere [vollständige Dokumentation](https://mintlify.com/docs) an oder tritt unserer [Community](https://mintlify.com/community) bei.
+</Note>

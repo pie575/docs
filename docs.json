@@ -9,79 +9,616 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
-        "groups": [
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "index",
+                  "quickstart",
+                  "development"
+                ]
+              },
+              {
+                "group": "Customization",
+                "pages": [
+                  "essentials/settings",
+                  "essentials/navigation"
+                ]
+              },
+              {
+                "group": "Writing content",
+                "pages": [
+                  "essentials/markdown",
+                  "essentials/code",
+                  "essentials/images",
+                  "essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "AI tools",
+                "pages": [
+                  "ai-tools/cursor",
+                  "ai-tools/claude-code",
+                  "ai-tools/windsurf"
+                ]
+              }
             ]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "API documentation",
+                "pages": [
+                  "api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint examples",
+                "pages": [
+                  "api-reference/endpoint/get",
+                  "api-reference/endpoint/create",
+                  "api-reference/endpoint/delete",
+                  "api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
-        ]
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentation",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "en"
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "tabs": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Démarrage",
+                "pages": [
+                  "fr/index",
+                  "fr/quickstart",
+                  "fr/development"
+                ]
+              },
+              {
+                "group": "Personnalisation",
+                "pages": [
+                  "fr/essentials/settings",
+                  "fr/essentials/navigation"
+                ]
+              },
+              {
+                "group": "Rédaction de contenu",
+                "pages": [
+                  "fr/essentials/markdown",
+                  "fr/essentials/code",
+                  "fr/essentials/images",
+                  "fr/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "Outils d’IA",
+                "pages": [
+                  "fr/ai-tools/cursor",
+                  "fr/ai-tools/claude-code",
+                  "fr/ai-tools/windsurf"
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "Référence de l’API",
+            "groups": [
+              {
+                "group": "Documentation de l’API",
+                "pages": [
+                  "fr/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Exemples d’endpoints",
+                "pages": [
+                  "fr/api-reference/endpoint/get",
+                  "fr/api-reference/endpoint/create",
+                  "fr/api-reference/endpoint/delete",
+                  "fr/api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentation",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
         },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+        "language": "fr"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "Guías",
+            "groups": [
+              {
+                "group": "Primeros pasos",
+                "pages": [
+                  "es/index",
+                  "es/quickstart",
+                  "es/development"
+                ]
+              },
+              {
+                "group": "Personalización",
+                "pages": [
+                  "es/essentials/settings",
+                  "es/essentials/navigation"
+                ]
+              },
+              {
+                "group": "Redacción de contenido",
+                "pages": [
+                  "es/essentials/markdown",
+                  "es/essentials/code",
+                  "es/essentials/images",
+                  "es/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "Herramientas de IA",
+                "pages": [
+                  "es/ai-tools/cursor",
+                  "es/ai-tools/claude-code",
+                  "es/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Referencia de la API",
+            "groups": [
+              {
+                "group": "Documentación de la API",
+                "pages": [
+                  "es/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Ejemplos de endpoints",
+                "pages": [
+                  "es/api-reference/endpoint/get",
+                  "es/api-reference/endpoint/create",
+                  "es/api-reference/endpoint/delete",
+                  "es/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentación",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "es"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "Anleitungen",
+            "groups": [
+              {
+                "group": "Erste Schritte",
+                "pages": [
+                  "de/index",
+                  "de/quickstart",
+                  "de/development"
+                ]
+              },
+              {
+                "group": "Anpassung",
+                "pages": [
+                  "de/essentials/settings",
+                  "de/essentials/navigation"
+                ]
+              },
+              {
+                "group": "Inhalte schreiben",
+                "pages": [
+                  "de/essentials/markdown",
+                  "de/essentials/code",
+                  "de/essentials/images",
+                  "de/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "KI-Tools",
+                "pages": [
+                  "de/ai-tools/cursor",
+                  "de/ai-tools/claude-code",
+                  "de/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API-Referenz",
+            "groups": [
+              {
+                "group": "API-Dokumentation",
+                "pages": [
+                  "de/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint-Beispiele",
+                "pages": [
+                  "de/api-reference/endpoint/get",
+                  "de/api-reference/endpoint/create",
+                  "de/api-reference/endpoint/delete",
+                  "de/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Dokumentation",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "de"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "Guide",
+            "groups": [
+              {
+                "group": "Guida introduttiva",
+                "pages": [
+                  "it/index",
+                  "it/quickstart",
+                  "it/development"
+                ]
+              },
+              {
+                "group": "Personalizzazione",
+                "pages": [
+                  "it/essentials/settings",
+                  "it/essentials/navigation"
+                ]
+              },
+              {
+                "group": "Scrivere contenuti",
+                "pages": [
+                  "it/essentials/markdown",
+                  "it/essentials/code",
+                  "it/essentials/images",
+                  "it/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "Strumenti di IA",
+                "pages": [
+                  "it/ai-tools/cursor",
+                  "it/ai-tools/claude-code",
+                  "it/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Riferimento API",
+            "groups": [
+              {
+                "group": "Documentazione API",
+                "pages": [
+                  "it/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Esempi di endpoint",
+                "pages": [
+                  "it/api-reference/endpoint/get",
+                  "it/api-reference/endpoint/create",
+                  "it/api-reference/endpoint/delete",
+                  "it/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentazione",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "it"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "Guias",
+            "groups": [
+              {
+                "group": "Primeiros passos",
+                "pages": [
+                  "pt-BR/index",
+                  "pt-BR/quickstart",
+                  "pt-BR/development"
+                ]
+              },
+              {
+                "group": "Personalização",
+                "pages": [
+                  "pt-BR/essentials/settings",
+                  "pt-BR/essentials/navigation"
+                ]
+              },
+              {
+                "group": "Escrevendo conteúdo",
+                "pages": [
+                  "pt-BR/essentials/markdown",
+                  "pt-BR/essentials/code",
+                  "pt-BR/essentials/images",
+                  "pt-BR/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "Ferramentas de IA",
+                "pages": [
+                  "pt-BR/ai-tools/cursor",
+                  "pt-BR/ai-tools/claude-code",
+                  "pt-BR/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Referência da API (Interface de Programação de Aplicações)",
+            "groups": [
+              {
+                "group": "Documentação da API",
+                "pages": [
+                  "pt-BR/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Exemplos de endpoints",
+                "pages": [
+                  "pt-BR/api-reference/endpoint/get",
+                  "pt-BR/api-reference/endpoint/create",
+                  "pt-BR/api-reference/endpoint/delete",
+                  "pt-BR/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "Documentação",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "Blog",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "pt-BR"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "ガイド",
+            "groups": [
+              {
+                "group": "はじめに",
+                "pages": [
+                  "ja/index",
+                  "ja/quickstart",
+                  "ja/development"
+                ]
+              },
+              {
+                "group": "カスタマイズ",
+                "pages": [
+                  "ja/essentials/settings",
+                  "ja/essentials/navigation"
+                ]
+              },
+              {
+                "group": "コンテンツの作成",
+                "pages": [
+                  "ja/essentials/markdown",
+                  "ja/essentials/code",
+                  "ja/essentials/images",
+                  "ja/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "AI ツール",
+                "pages": [
+                  "ja/ai-tools/cursor",
+                  "ja/ai-tools/claude-code",
+                  "ja/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API（Application Programming Interface／アプリケーション・プログラミング・インターフェース）リファレンス",
+            "groups": [
+              {
+                "group": "APIドキュメンテーション",
+                "pages": [
+                  "ja/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "エンドポイントの例",
+                "pages": [
+                  "ja/api-reference/endpoint/get",
+                  "ja/api-reference/endpoint/create",
+                  "ja/api-reference/endpoint/delete",
+                  "ja/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "ドキュメンテーション",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "ブログ",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "ja"
+      },
+      {
+        "tabs": [
+          {
+            "tab": "指南",
+            "groups": [
+              {
+                "group": "入门",
+                "pages": [
+                  "zh/index",
+                  "zh/quickstart",
+                  "zh/development"
+                ]
+              },
+              {
+                "group": "自定义",
+                "pages": [
+                  "zh/essentials/settings",
+                  "zh/essentials/navigation"
+                ]
+              },
+              {
+                "group": "撰写内容",
+                "pages": [
+                  "zh/essentials/markdown",
+                  "zh/essentials/code",
+                  "zh/essentials/images",
+                  "zh/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "AI 工具",
+                "pages": [
+                  "zh/ai-tools/cursor",
+                  "zh/ai-tools/claude-code",
+                  "zh/ai-tools/windsurf"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API（Application Programming Interface，应用程序编程接口）参考",
+            "groups": [
+              {
+                "group": "API 文档",
+                "pages": [
+                  "zh/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "端点示例",
+                "pages": [
+                  "zh/api-reference/endpoint/get",
+                  "zh/api-reference/endpoint/create",
+                  "zh/api-reference/endpoint/delete",
+                  "zh/api-reference/endpoint/webhook"
+                ]
+              }
+            ]
+          }
+        ],
+        "global": {
+          "anchors": [
+            {
+              "anchor": "文档",
+              "href": "https://mintlify.com/docs",
+              "icon": "book-open-cover"
+            },
+            {
+              "anchor": "博客",
+              "href": "https://mintlify.com/blog",
+              "icon": "newspaper"
+            }
+          ]
+        },
+        "language": "zh"
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -102,15 +639,15 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {

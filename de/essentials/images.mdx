@@ -1,0 +1,55 @@
+---
+title: 'Bilder und Einbettungen'
+description: 'Bilder, Videos und andere HTML-Elemente hinzufügen'
+icon: 'image'
+---
+
+<img style={{ borderRadius: '0.5rem' }} src="https://mintlify-assets.b-cdn.net/bigbend.jpg" />
+
+<div id="image">
+  ## Bild
+</div>
+
+<div id="using-markdown">
+  ### Verwendung von Markdown
+</div>
+
+Mit der [Markdown-Syntax](https://www.markdownguide.org/basic-syntax/#images) kannst du Bilder mit folgendem Code hinzufügen
+
+```md
+![Titel](/path/image.jpg)
+```
+
+Beachte, dass die Bilddatei kleiner als 5 MB sein muss. Andernfalls empfehlen wir, einen Dienst wie [Cloudinary](https://cloudinary.com/) oder [S3](https://aws.amazon.com/s3/) zu verwenden. Du kannst dann die entsprechende URL nutzen und einbetten.
+
+<div id="using-embeds">
+  ### Embeds verwenden
+</div>
+
+Für mehr Flexibilität bei Bildern kannst du auch [Embeds](/de/writing-content/embed) nutzen, um Bilder hinzuzufügen.
+
+```html
+<img height="200" src="/path/image.jpg" />
+```
+
+<div id="embeds-and-html-elements">
+  ## Einbettungen und HTML-Elemente
+</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="YouTube-Videoplayer" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{ width: '100%', borderRadius: '0.5rem' }} />
+
+<br />
+
+<Tip>
+  Mintlify unterstützt [HTML-Tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). Das ist hilfreich, wenn du HTML-Tags der Markdown-Syntax vorziehst, und ermöglicht es dir, Dokumentation mit maximaler Flexibilität zu erstellen.
+</Tip>
+
+<div id="iframes">
+  ### iFrames
+</div>
+
+Lädt eine andere HTML-Seite innerhalb des Dokuments. Wird am häufigsten zum Einbetten von Videos verwendet.
+
+```html
+<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
+```

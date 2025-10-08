@@ -1,0 +1,100 @@
+---
+title: "Windsurf 设置"
+description: "为你的文档工作流配置 Windsurf"
+icon: "water"
+---
+
+配置 Windsurf 的 Cascade AI 助手，帮助你撰写与维护文档。本指南介绍如何针对你的 Mintlify 文档工作流设置 Windsurf。
+
+<div id="prerequisites">
+  ## 前置条件
+</div>
+
+- 已安装 Windsurf 编辑器
+- 可访问你的文档仓库
+
+<div id="workspace-rules">
+  ## Workspace 规则
+</div>
+
+创建 Workspace 规则，为 Windsurf 提供与你的文档项目和规范相关的 context。
+
+在项目根目录下创建 `.windsurf/rules.md`：
+
+````markdown
+# Mintlify 技术写作规范
+
+## 项目背景
+
+- 这是一个基于 Mintlify 平台的文档项目
+- 我们使用带有 YAML frontmatter 的 MDX 文件
+- 导航在 `docs.json` 中配置
+- 我们遵循技术写作最佳实践
+
+## 写作标准
+
+- 使用第二人称（"你"）来编写说明
+- 使用主动语态和现在时
+- 在操作步骤开始前说明前提条件
+- 为主要步骤提供预期结果
+- 使用描述性、关键词丰富的标题
+- 保持句子简洁但信息丰富
+
+## 必需的页面结构
+
+每个页面都必须以 frontmatter 开始：
+
+```yaml
+---
+title: "清晰、具体的标题"
+description: "用于 SEO 和导航的简洁描述"
+---
+```
+
+## Mintlify 组件
+
+### 标注
+
+- `<Note>` 用于有用的补充信息
+- `<Warning>` 用于重要警告和破坏性更改
+- `<Tip>` 用于最佳实践和专家建议
+- `<Info>` 用于中性的上下文信息
+- `<Check>` 用于成功确认
+
+### 代码示例
+
+- 在适当的时候，包含完整的、可运行的示例
+- 使用 `<CodeGroup>` 展示多语言示例
+- 为所有代码块指定语言标签
+- 包含真实数据，而不是占位符
+- 在 API 文档中使用 `<RequestExample>` 和 `<ResponseExample>`
+
+### 操作步骤
+
+- 使用 `<Steps>` 组件编写顺序说明
+- 在相关时包含带有 `<Check>` 组件的验证步骤
+- 将复杂操作分解为更小的步骤
+
+### 内容组织
+
+- 使用 `<Tabs>` 展示平台特定内容
+- 使用 `<Accordion>` 实现渐进式展示
+- 使用 `<Card>` 和 `<CardGroup>` 突出显示内容
+- 将图像包装在带有描述性 alt 文本的 `<Frame>` 组件中
+
+## API 文档要求
+
+- 使用 `<ParamField>` 记录所有参数
+- 使用 `<ResponseField>` 显示响应结构
+- 包含成功和错误示例
+- 使用 `<Expandable>` 处理嵌套对象属性
+- 始终包含身份验证示例
+
+## 质量标准
+
+- 在发布前测试所有代码示例
+- 对内部链接使用相对路径
+- 为所有图像包含 alt 文本
+- 确保正确的标题层次结构（从 h2 开始）
+- 检查现有模式的一致性
+````

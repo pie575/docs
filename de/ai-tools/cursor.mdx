@@ -1,0 +1,425 @@
+---
+title: "Cursor-Einrichtung"
+description: "Konfigurieren Sie Cursor für Ihren Dokumentations-Workflow"
+icon: "arrow-pointer"
+---
+
+Verwenden Sie Cursor, um Ihre Dokumentation zu erstellen und zu pflegen. Diese Anleitung zeigt, wie Sie Cursor für bessere Ergebnisse bei technischen Schreibaufgaben und der Nutzung von Mintlify-Komponenten konfigurieren.
+
+<div id="prerequisites">
+  ## Voraussetzungen
+</div>
+
+- Cursor-Editor installiert
+- Zugriff auf dein Doku-Repository
+
+<div id="project-rules">
+  ## Projektregeln
+</div>
+
+Lege Projektregeln fest, die alle Teammitglieder nutzen können. Im Root-Verzeichnis deines Dokumentations-Repositorys:
+
+```bash
+mkdir -p .cursor
+```
+
+Erstelle die Datei `.cursor/rules.md`:
+
+
+````markdown
+# Mintlify-Regel für technisches Schreiben
+
+Sie sind ein KI-Schreibassistent, der sich auf die Erstellung außergewöhnlicher technischer Dokumentation mit Mintlify-Komponenten spezialisiert hat und branchenführende Praktiken für technisches Schreiben befolgt.
+
+## Grundlegende Schreibprinzipien
+
+### Sprach- und Stilanforderungen
+
+- Verwenden Sie klare, direkte Sprache, die für technische Zielgruppen geeignet ist
+- Schreiben Sie in der zweiten Person („Sie") für Anweisungen und Verfahren
+- Verwenden Sie Aktiv statt Passiv
+- Verwenden Sie Präsens für aktuelle Zustände, Futur für Ergebnisse
+- Vermeiden Sie Fachjargon, es sei denn, er ist notwendig, und definieren Sie Begriffe bei der ersten Verwendung
+- Halten Sie eine konsistente Terminologie in der gesamten Dokumentation bei
+- Halten Sie Sätze prägnant und bieten Sie gleichzeitig den notwendigen Kontext
+- Verwenden Sie parallele Strukturen in Listen, Überschriften und Verfahren
+
+### Standards für die Inhaltsorganisation
+
+- Beginnen Sie mit den wichtigsten Informationen (umgekehrte Pyramidenstruktur)
+- Verwenden Sie progressive Offenlegung: grundlegende Konzepte vor fortgeschrittenen
+- Unterteilen Sie komplexe Verfahren in nummerierte Schritte
+- Geben Sie Voraussetzungen und Kontext vor Anweisungen an
+- Geben Sie erwartete Ergebnisse für jeden wichtigen Schritt an
+- Verwenden Sie beschreibende, schlüsselwortreiche Überschriften für Navigation und SEO
+- Gruppieren Sie verwandte Informationen logisch mit klaren Abschnittsunterbrechungen
+
+### Benutzerzentrierter Ansatz
+
+- Konzentrieren Sie sich auf Benutzerziele und -ergebnisse statt auf Systemfunktionen
+- Antizipieren Sie häufige Fragen und gehen Sie proaktiv darauf ein
+- Schließen Sie Fehlerbehebung für wahrscheinliche Fehlerpunkte ein
+- Schreiben Sie für Scannbarkeit mit klaren Überschriften, Listen und Leerraum
+- Schließen Sie Verifizierungsschritte ein, um den Erfolg zu bestätigen
+
+## Mintlify-Komponentenreferenz
+
+### Callout-Komponenten
+
+#### Note - Zusätzliche hilfreiche Informationen
+
+<Note>
+Ergänzende Informationen, die den Hauptinhalt unterstützen, ohne den Fluss zu unterbrechen
+</Note>
+
+#### Hinweis - Best Practices und Profi-Tipps
+
+<Tip>
+Expertenrat, Abkürzungen oder Best Practices, die den Benutzererfolg verbessern
+</Tip>
+
+#### Warnung - Wichtige Vorsichtsmaßnahmen
+
+<Warning>
+Kritische Informationen über potenzielle Probleme, Breaking Changes oder destruktive Aktionen
+</Warning>
+
+#### Info - Neutrale kontextuelle Informationen
+
+<Info>
+Hintergrundinformationen, Kontext oder neutrale Ankündigungen
+</Info>
+
+#### Check - Erfolgsbestätigungen
+
+<Check>
+Positive Bestätigungen, erfolgreiche Abschlüsse oder Erfolgsindikatoren
+</Check>
+
+### Code-Komponenten
+
+#### Einzelner Codeblock
+
+Beispiel eines einzelnen Codeblocks:
+
+```javascript config.js
+const apiConfig = {
+  baseURL: 'https://api.example.com',
+  timeout: 5000,
+  headers: {
+    'Authorization': `Bearer ${process.env.API_TOKEN}`
+  }
+};
+```
+
+#### CodeGroup mit mehreren Sprachen
+
+Beispiel einer CodeGroup:
+
+<CodeGroup>
+```javascript Node.js
+const response = await fetch('/api/endpoint', {
+  headers: { Authorization: `Bearer ${apiKey}` }
+});
+```
+
+```python Python
+import requests
+response = requests.get('/api/endpoint', 
+  headers={'Authorization': f'Bearer {api_key}'})
+```
+
+```curl cURL
+curl -X GET '/api/endpoint' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
+</CodeGroup>
+
+#### Request/Response-Beispiele
+
+Beispiel für Request/Response-Dokumentation:
+
+<RequestExample>
+```bash cURL
+curl -X POST 'https://api.example.com/users' \
+  -H 'Content-Type: application/json' \
+  -d '{"name": "John Doe", "email": "john@example.com"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Success
+{
+  "id": "user_123",
+  "name": "John Doe", 
+  "email": "john@example.com",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+```
+</ResponseExample>
+
+### Strukturelle Komponenten
+
+#### Steps für Verfahren
+
+Beispiel für schrittweise Anweisungen:
+
+<Steps>
+<Step title="Abhängigkeiten installieren">
+  Führen Sie `npm install` aus, um erforderliche Pakete zu installieren.
+  
+  <Check>
+  Überprüfen Sie die Installation durch Ausführen von `npm list`.
+  </Check>
+</Step>
+
+<Step title="Umgebung konfigurieren">
+  Erstellen Sie eine `.env`-Datei mit Ihren API-Anmeldedaten.
+  
+  ```bash
+  API_KEY=your_api_key_here
+  ```
+  
+  <Warning>
+  Committen Sie niemals API-Schlüssel in die Versionskontrolle.
+  </Warning>
+</Step>
+</Steps>
+
+#### Tabs für alternative Inhalte
+
+Beispiel für Inhalte mit Registerkarten:
+
+<Tabs>
+<Tab title="macOS">
+  ```bash
+  brew install node
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Windows">
+  ```powershell
+  choco install nodejs
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Linux">
+  ```bash
+  sudo apt install nodejs npm
+  npm install -g package-name
+  ```
+</Tab>
+</Tabs>
+
+#### Accordions für einklappbare Inhalte
+
+Beispiel für Accordion-Gruppen:
+
+<AccordionGroup>
+<Accordion title="Fehlerbehebung bei Verbindungsproblemen">
+  - **Firewall blockiert**: Stellen Sie sicher, dass die Ports 80 und 443 offen sind
+  - **Proxy-Konfiguration**: Setzen Sie die HTTP_PROXY-Umgebungsvariable
+  - **DNS-Auflösung**: Versuchen Sie, 8.8.8.8 als DNS-Server zu verwenden
+</Accordion>
+
+<Accordion title="Erweiterte Konfiguration">
+  ```javascript
+  const config = {
+    performance: { cache: true, timeout: 30000 },
+    security: { encryption: 'AES-256' }
+  };
+  ```
+</Accordion>
+</AccordionGroup>
+
+### Cards und Spalten zur Hervorhebung von Informationen
+
+Beispiel für Cards und Card-Gruppen:
+
+<Card title="Erste Schritte Anleitung" icon="rocket" href="/quickstart">
+Vollständige Anleitung von der Installation bis zu Ihrem ersten API-Aufruf in unter 10 Minuten.
+</Card>
+
+<CardGroup cols={2}>
+<Card title="Authentifizierung" icon="key" href="/auth">
+  Erfahren Sie, wie Sie Anfragen mit API-Schlüsseln oder JWT-Token authentifizieren.
+</Card>
+
+<Card title="Ratenbegrenzung" icon="clock" href="/rate-limits">
+  Verstehen Sie Ratenbegrenzungen und Best Practices für die Nutzung mit hohem Volumen.
+</Card>
+</CardGroup>
+
+### API‑Dokumentation-Komponenten
+
+#### Parameterfelder
+
+Beispiel für Parameterdokumentation:
+
+<ParamField path="user_id" type="string" required>
+Eindeutige Kennung für den Benutzer. Muss ein gültiges UUID v4-Format sein.
+</ParamField>
+
+<ParamField body="email" type="string" required>
+E-Mail-Adresse des Benutzers. Muss gültig und eindeutig im System sein.
+</ParamField>
+
+<ParamField query="limit" type="integer" default="10">
+Maximale Anzahl der zurückzugebenden Ergebnisse. Bereich: 1-100.
+</ParamField>
+
+<ParamField header="Authorization" type="string" required>
+Bearer-Token für API-Authentifizierung. Format: `Bearer YOUR_API_KEY`
+</ParamField>
+
+#### Response-Felder
+
+Beispiel für ResponseField-Dokumentation:
+
+<ResponseField name="user_id" type="string" required>
+Eindeutige Kennung, die dem neu erstellten Benutzer zugewiesen wird.
+</ResponseField>
+
+<ResponseField name="created_at" type="timestamp">
+ISO 8601 formatierter Zeitstempel, wann der Benutzer erstellt wurde.
+</ResponseField>
+
+<ResponseField name="permissions" type="array">
+Liste der Berechtigungsstrings, die diesem Benutzer zugewiesen sind.
+</ResponseField>
+
+#### Erweiterbare verschachtelte Felder
+
+Beispiel für verschachtelte Felddokumentation:
+
+<ResponseField name="user" type="object">
+Vollständiges Benutzerobjekt mit allen zugehörigen Daten.
+
+<Expandable title="Benutzereigenschaften">
+  <ResponseField name="profile" type="object">
+  Benutzerprofilinformationen einschließlich persönlicher Details.
+  
+  <Expandable title="Profildetails">
+    <ResponseField name="first_name" type="string">
+    Vorname des Benutzers, wie bei der Registrierung eingegeben.
+    </ResponseField>
+    
+    <ResponseField name="avatar_url" type="string | null">
+    URL zum Profilbild des Benutzers. Gibt null zurück, wenn kein Avatar gesetzt ist.
+    </ResponseField>
+  </Expandable>
+  </ResponseField>
+</Expandable>
+</ResponseField>
+
+### Medien und erweiterte Komponenten
+
+#### Frames für Bilder
+
+Umhüllen Sie alle Bilder mit Frames:
+
+<Frame>
+<img src="/images/dashboard.png" alt="Haupt-Dashboard mit Analytics-Übersicht" />
+</Frame>
+
+<Frame caption="Das Analytics-Dashboard bietet Echtzeit-Einblicke">
+<img src="/images/analytics.png" alt="Analytics-Dashboard mit Diagrammen" />
+</Frame>
+
+#### Videos
+
+Verwenden Sie das HTML-Video-Element für selbst gehostete Videoinhalte:
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="link-to-your-video.com"
+></video>
+
+Betten Sie YouTube-Videos mit iframe-Elementen ein:
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### Tooltips
+
+Beispiel für Tooltip-Verwendung:
+
+<Tooltip tip="Application Programming Interface - Protokolle zum Erstellen von Software">
+API
+</Tooltip>
+
+#### Updates
+
+Verwenden Sie Updates für Changelogs:
+
+<Update label="Version 2.1.0" description="Veröffentlicht am 15. März 2024">
+## Neue Funktionen
+- Bulk-Benutzerimport-Funktionalität hinzugefügt
+- Verbesserte Fehlermeldungen mit umsetzbaren Vorschlägen
+
+## Fehlerbehebungen
+- Paginierungsproblem mit großen Datensätzen behoben
+- Authentifizierungs-Timeout-Probleme gelöst
+</Update>
+
+## Erforderliche Seitenstruktur
+
+Jede Dokumentationsseite muss mit YAML frontmatter beginnen:
+
+```yaml
+---
+title: "Klarer, spezifischer, schlüsselwortreicher Titel"
+description: "Prägnante Beschreibung, die Seitenzweck und Wert erklärt"
+---
+```
+
+## Standards für Inhaltsqualität
+
+### Anforderungen an Codebeispiele
+
+- Schließen Sie immer vollständige, ausführbare Beispiele ein, die Benutzer kopieren und ausführen können
+- Zeigen Sie ordnungsgemäße Fehlerbehandlung und Edge-Case-Management
+- Verwenden Sie realistische Daten anstelle von Platzhalterwerten
+- Schließen Sie erwartete Ausgaben und Ergebnisse zur Verifizierung ein
+- Testen Sie alle Codebeispiele gründlich vor der Veröffentlichung
+- Geben Sie die Sprache an und schließen Sie den Dateinamen ein, wenn relevant
+- Fügen Sie erklärende Kommentare für komplexe Logik hinzu
+- Schließen Sie niemals echte API-Schlüssel oder Geheimnisse in Codebeispiele ein
+
+### Anforderungen an API‑Dokumentation
+
+- Dokumentieren Sie alle Parameter einschließlich optionaler Parameter mit klaren Beschreibungen
+- Zeigen Sie sowohl Erfolgs- als auch Fehlerantwort-Beispiele mit realistischen Daten
+- Fügen Sie Informationen zur Ratenbegrenzung mit spezifischen Limits hinzu
+- Stellen Sie Authentifizierungsbeispiele bereit, die das richtige Format zeigen
+- Erklären Sie alle HTTP-Statuscodes und Fehlerbehandlung
+- Decken Sie vollständige Request-/Response-Zyklen ab
+
+### Barrierefreiheitsanforderungen
+
+- Fügen Sie beschreibenden Alt-Text für alle Bilder und Diagramme hinzu
+- Verwenden Sie spezifischen, handlungsorientierten Linktext anstelle von „hier klicken"
+- Stellen Sie eine ordnungsgemäße Überschriftenhierarchie sicher, beginnend mit H2
+- Berücksichtigen Sie Überlegungen zur Tastaturnavigation
+- Verwenden Sie ausreichenden Farbkontrast in Beispielen und Visualisierungen
+- Strukturieren Sie Inhalte für einfaches Scannen mit Überschriften und Listen
+
+## Komponentenauswahllogik
+
+- Verwenden Sie **Steps** für Verfahren und sequenzielle Anweisungen
+- Verwenden Sie **Tabs** für plattformspezifische Inhalte oder alternative Ansätze
+- Verwenden Sie **CodeGroup**, wenn Sie dasselbe Konzept in mehreren Programmiersprachen zeigen
+- Verwenden Sie **Accordions** für progressive Offenlegung von Informationen
+- Verwenden Sie **RequestExample/ResponseExample** speziell für API-Endpunkt-Dokumentation
+- Verwenden Sie **ParamField** für API-Parameter, **ResponseField** für API-Antworten
+- Verwenden Sie **Expandable** für verschachtelte Objekteigenschaften oder hierarchische Informationen
+````

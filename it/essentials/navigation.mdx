@@ -1,0 +1,92 @@
+---
+title: "Navigazione"
+description: "Il campo navigation in docs.json definisce le pagine incluse nel menu di navigazione"
+icon: 'map'
+---
+
+Il menu di navigazione è l’elenco dei collegamenti presente su ogni sito web.
+
+Probabilmente aggiornerai `docs.json` ogni volta che aggiungi una nuova pagina. Le pagine non vengono visualizzate automaticamente.
+
+<div id="navigation-syntax">
+  ## Sintassi di navigazione
+</div>
+
+La nostra sintassi di navigazione è ricorsiva, il che significa che puoi creare gruppi di navigazione annidati. Non è necessario includere `.mdx` nei nomi delle pagine.
+
+<CodeGroup>
+
+```json Navigazione standard
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Getting Started",
+          "pages": ["quickstart"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+```json Navigazione annidata
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Getting Started",
+          "pages": [
+            "quickstart",
+            {
+              "group": "Pagine di riferimento annidate",
+              "pages": ["nested-reference-page"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+</CodeGroup>
+
+<div id="folders">
+  ## Cartelle
+</div>
+
+Inserisci i file MDX nelle cartelle e aggiorna i percorsi in `docs.json`.
+
+Ad esempio, per avere una pagina in `https://yoursite.com/your-folder/your-page`, crea una cartella chiamata `your-folder` contenente un file MDX chiamato `your-page.mdx`.
+
+<Warning>
+  Non puoi usare `api` come nome di una cartella a meno che non sia annidata all&#39;interno di un&#39;altra cartella. Mintlify usa Next.js, che riserva la cartella `api` a livello superiore per le chiamate interne al server. Un nome di cartella come `api-reference` verrebbe accettato.
+</Warning>
+
+```json Navigation With Folder
+"navigation": {
+  "tabs": [
+    {
+      "tab": "Docs",
+      "groups": [
+        {
+          "group": "Nome Gruppo",
+          "pages": ["your-folder/your-page"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+<div id="hidden-pages">
+  ## Pagine nascoste
+</div>
+
+I file MDX non inclusi in `docs.json` non verranno visualizzati nella barra laterale, ma saranno accessibili tramite la barra di ricerca o tramite link diretto.

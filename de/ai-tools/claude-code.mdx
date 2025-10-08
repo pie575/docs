@@ -1,0 +1,83 @@
+---
+title: "Einrichtung von Claude Code"
+description: "Richten Sie Claude Code für Ihren Dokumentations-Workflow ein"
+icon: "asterisk"
+---
+
+Claude Code ist das offizielle CLI-Tool von Anthropic. Dieser Leitfaden unterstützt Sie dabei, Claude Code einzurichten, um Ihre Dokumentation zu verfassen und zu pflegen.
+
+<div id="prerequisites">
+  ## Voraussetzungen
+</div>
+
+- Aktives Claude‑Abonnement (Pro, Max oder API-Zugriff)
+
+<div id="setup">
+  ## Einrichtung
+</div>
+
+1. Installiere Claude Code global:
+
+```bash
+  npm install -g @anthropic-ai/claude-code
+```
+
+2. Navigieren Sie zu Ihrem docs-Verzeichnis.
+3. (Optional) Fügen Sie die unten stehende Datei `CLAUDE.md` zu Ihrem Projekt hinzu.
+4. Führen Sie `claude` aus, um zu starten.
+
+
+<div id="create-claudemd">
+  ## Erstelle `CLAUDE.md`
+</div>
+
+Erstelle im Root deines Dokumentations-Repositorys eine Datei `CLAUDE.md`, um Claude Code auf deine spezifischen Dokumentationsstandards zu trainieren:
+
+```markdown
+# Mintlify-Dokumentation
+
+## Arbeitsbeziehung
+- Du kannst Ideen hinterfragen - das kann zu besserer Dokumentation führen. Führe Quellen an und erkläre deine Begründung, wenn du das tust
+- Frage IMMER nach Klarstellung, anstatt Annahmen zu treffen
+- Lüge, rate oder erfinde NIEMALS Informationen
+
+## Projektkontext
+- Format: MDX-Dateien mit YAML-Frontmatter
+- Konfiguration: docs.json für Navigation, Theme, Einstellungen
+- Komponenten: Mintlify-Komponenten
+
+## Content-Strategie
+- Dokumentiere gerade genug für den Benutzererfolg - nicht zu viel, nicht zu wenig
+- Priorisiere Genauigkeit und Benutzerfreundlichkeit der Informationen
+- Mache Inhalte wenn möglich zeitlos
+- Suche nach vorhandenen Informationen, bevor du neue Inhalte hinzufügst. Vermeide Duplikate, es sei denn, es geschieht aus strategischen Gründen
+- Überprüfe vorhandene Muster auf Konsistenz
+- Beginne mit den kleinsten sinnvollen Änderungen
+
+## Frontmatter-Anforderungen für Seiten
+- Titel: Klarer, beschreibender Seitentitel
+- description: Prägnante Zusammenfassung für SEO/Navigation
+
+## Schreibstandards
+- Zweite Person („du")
+- Voraussetzungen am Anfang von prozeduralen Inhalten
+- Teste alle Code-Beispiele vor der Veröffentlichung
+- Passe Stil und Formatierung vorhandener Seiten an
+- Schließe sowohl grundlegende als auch erweiterte Anwendungsfälle ein
+- Sprach-Tags auf allen Code-Blöcken
+- Alt-Text auf allen Bildern
+- Relative Pfade für interne Links
+
+## Git-Workflow
+- Verwende NIEMALS --no-verify beim Committen
+- Frage, wie uncommitted Änderungen behandelt werden sollen, bevor du beginnst
+- Erstelle einen neuen Branch, wenn kein klarer Branch für Änderungen existiert
+- Committe häufig während der Entwicklung
+- Überspringe oder deaktiviere NIEMALS Pre-Commit-Hooks
+
+## Nicht tun
+- Frontmatter bei MDX-Dateien überspringen
+- Absolute URLs für interne Links verwenden
+- Ungetestete Code-Beispiele einschließen
+- Annahmen treffen - frage immer nach Klarstellung
+```

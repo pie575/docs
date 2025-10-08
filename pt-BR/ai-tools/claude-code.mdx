@@ -1,0 +1,83 @@
+---
+title: "Configuração do Claude Code"
+description: "Configure o Claude Code para o seu fluxo de trabalho de documentação"
+icon: "asterisk"
+---
+
+O Claude Code é a ferramenta de linha de comando (CLI) oficial da Anthropic. Este guia ajudará você a configurar o Claude Code para escrever e manter sua documentação.
+
+<div id="prerequisites">
+  ## Pré-requisitos
+</div>
+
+- Assinatura ativa do Claude (Pro, Max ou acesso à API)
+
+<div id="setup">
+  ## Configuração
+</div>
+
+1. Instale o Claude Code globalmente:
+
+```bash
+  npm install -g @anthropic-ai/claude-code
+```
+
+2. Vá até o diretório docs.
+3. (Opcional) Adicione o arquivo `CLAUDE.md` abaixo ao seu projeto.
+4. Execute `claude` para iniciar.
+
+
+<div id="create-claudemd">
+  ## Crie `CLAUDE.md`
+</div>
+
+Crie um arquivo `CLAUDE.md` na raiz do seu repositório de documentação para treinar o Claude Code com seus padrões específicos de documentação:
+
+```markdown
+# Documentação Mintlify
+
+## Relacionamento de trabalho
+- Você pode questionar ideias - isso pode levar a uma documentação melhor. Cite fontes e explique seu raciocínio ao fazer isso
+- SEMPRE peça esclarecimentos ao invés de fazer suposições
+- NUNCA minta, chute ou invente informações
+
+## Contexto do projeto
+- Formato: arquivos MDX com YAML frontmatter
+- Configuração: docs.json para navegação, tema, configurações
+- Componentes: componentes Mintlify
+
+## Estratégia de conteúdo
+- Documente apenas o suficiente para o sucesso do usuário - nem muito, nem pouco
+- Priorize a precisão e usabilidade das informações
+- Torne o conteúdo atemporal quando possível
+- Busque por informações existentes antes de adicionar novo conteúdo. Evite duplicação a menos que seja feita por uma razão estratégica
+- Verifique padrões existentes para manter consistência
+- Comece fazendo as menores mudanças razoáveis
+
+## Requisitos de frontmatter para páginas
+- title: Título de página claro e descritivo
+- description: Resumo conciso para SEO/navegação
+
+## Padrões de escrita
+- Voz em segunda pessoa ("você")
+- Pré-requisitos no início do conteúdo procedimental
+- Teste todos os exemplos de código antes de publicar
+- Siga o estilo e formatação das páginas existentes
+- Inclua casos de uso básicos e avançados
+- Tags de linguagem em todos os blocos de código
+- Texto alternativo em todas as imagens
+- Caminhos relativos para links internos
+
+## Fluxo de trabalho Git
+- NUNCA use --no-verify ao fazer commit
+- Pergunte como lidar com mudanças não commitadas antes de começar
+- Crie uma nova branch quando não existir uma branch clara para as mudanças
+- Faça commit frequentemente durante o desenvolvimento
+- NUNCA pule ou desabilite hooks de pré-commit
+
+## Não faça
+- Pular frontmatter em qualquer arquivo MDX
+- Usar URLs absolutas para links internos
+- Incluir exemplos de código não testados
+- Fazer suposições - sempre peça esclarecimentos
+```

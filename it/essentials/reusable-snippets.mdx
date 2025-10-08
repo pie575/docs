@@ -1,0 +1,120 @@
+---
+title: "Frammenti riutilizzabili"
+description: "Frammenti riutilizzabili e personalizzati per mantenere il contenuto allineato"
+icon: "recycle"
+---
+
+import SnippetIntro from '/snippets/it/snippet-intro.mdx';
+
+<SnippetIntro />
+
+
+<div id="creating-a-custom-snippet">
+  ## Creare un frammento personalizzato
+</div>
+
+**Prerequisito**: devi creare il file del frammento nella directory `snippets`.
+
+<Note>
+  Qualsiasi pagina nella directory `snippets` verrà trattata come un frammento e non
+  verrà resa come pagina autonoma. Se vuoi creare una pagina autonoma
+  a partire dal frammento, importa il frammento in un altro file e usalo come
+  componente.
+</Note>
+
+<div id="default-export">
+  ### Esportazione predefinita
+</div>
+
+1. Aggiungi al file del frammento il contenuto che desideri riutilizzare in più
+   posizioni. Facoltativamente, puoi aggiungere variabili da valorizzare tramite props
+   quando importi il frammento.
+
+```mdx snippets/my-snippet.mdx
+Ciao mondo! Questo è il mio contenuto che voglio riutilizzare tra le pagine. La mia parola chiave del
+giorno è {word}.
+```
+
+<Warning>
+  Il contenuto che desideri riutilizzare deve essere nella directory `snippets`
+  affinché l&#39;importazione funzioni.
+</Warning>
+
+2. Importa il frammento nel file di destinazione.
+
+```mdx destination-file.mdx
+---
+title: Il mio titolo
+description: La mia descrizione
+---
+
+import MySnippet from '/snippets/path/to/my-snippet.mdx';
+
+## Intestazione
+
+Lorem ipsum dolor sit amet.
+
+<MySnippet word="bananas" />
+```
+
+
+<div id="reusable-variables">
+  ### Variabili riutilizzabili
+</div>
+
+1. Esporta una variabile dal tuo file di frammento:
+
+```mdx snippets/path/to/custom-variables.mdx
+export const myName = 'il mio nome';
+
+export const myObject = { fruit: 'fragole' };
+```
+
+2. Importa il frammento nel file di destinazione e usa la variabile:
+
+```mdx destination-file.mdx
+---
+title: Il mio titolo
+description: La mia descrizione
+---
+
+import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
+
+Ciao, il mio nome è {myName} e mi piace {myObject.fruit}.
+```
+
+
+<div id="reusable-components">
+  ### Componenti riutilizzabili
+</div>
+
+1. All&#39;interno del file del tuo frammento, crea un componente che accetti delle props esportando
+   il componente come funzione a freccia.
+
+```mdx snippets/custom-component.mdx
+export const MyComponent = ({ title }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>... contenuto del frammento ...</p>
+  </div>
+);
+```
+
+<Warning>
+  MDX non viene compilato all&#39;interno del corpo di una funzione freccia. Attieniti alla sintassi HTML quando puoi oppure usa un export predefinito se devi usare MDX.
+</Warning>
+
+2. Importa il frammento nel file di destinazione e passa le props
+
+```mdx destination-file.mdx
+---
+title: Il mio titolo
+description: La mia descrizione
+---
+
+import { MyComponent } from '/snippets/custom-component.mdx';
+
+Lorem ipsum dolor sit amet.
+
+<MyComponent title={'Titolo personalizzato'} />
+```

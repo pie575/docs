@@ -1,0 +1,37 @@
+---
+title: "Introduction"
+description: "API（Application Programming Interface：アプリケーション・プログラミング・インターフェイス）のエンドポイントを紹介するためのサンプルセクション"
+---
+
+<Note>
+  API（Application Programming Interface：アプリケーション・プログラミング・インターフェイス）リファレンスドキュメントを作成しない場合は、
+  api-reference フォルダを削除してこのセクションを取り除けます。
+</Note>
+
+<div id="welcome">
+  ## ようこそ
+</div>
+
+APIドキュメンテーションを作成する方法は、[OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) と [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration) の2通りあります。スターターキットでは、以下のOpenAPI仕様を使用しています。
+
+<Card
+  title="Plant Store Endpoints"
+  icon="leaf"
+  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+>
+  OpenAPI仕様ファイルを表示
+</Card>
+
+<div id="authentication">
+  ## 認証
+</div>
+
+すべての API（Application Programming Interface：アプリケーション・プログラミング・インターフェイス）エンドポイントは Bearer トークンで認証され、そのトークンは仕様ファイルから取得されます。
+
+```json
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
+```
