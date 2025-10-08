@@ -1,0 +1,40 @@
+---
+title: 'Blocchi di codice'
+description: 'Visualizza codice inline e blocchi di codice'
+icon: 'code'
+---
+
+<div id="inline-code">
+  ## Codice inline
+</div>
+
+Per indicare una `parola` o una `frase` come codice, racchiudila tra backtick (`).
+
+```
+Per contrassegnare una `parola` o `frase` come codice, racchiudila tra backtick (`).
+```
+
+
+<div id="code-blocks">
+  ## Blocchi di codice
+</div>
+
+Usa i [fenced code blocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) racchiudendo il codice tra tre backtick e, subito dopo i backtick iniziali, indica il linguaggio di programmazione del tuo snippet per ottenere l’evidenziazione della sintassi. In alternativa, puoi anche aggiungere un nome al tuo codice dopo il linguaggio di programmazione.
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Ciao, mondo!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Ciao, Mondo!");
+    }
+}
+```
+````

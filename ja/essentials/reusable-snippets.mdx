@@ -1,0 +1,116 @@
+---
+title: "再利用可能なスニペット"
+description: "コンテンツの整合性を保つための再利用可能なカスタムスニペット"
+icon: "recycle"
+---
+
+import SnippetIntro from '/snippets/ja/snippet-intro.mdx';
+
+<SnippetIntro />
+
+
+<div id="creating-a-custom-snippet">
+  ## カスタムスニペットの作成
+</div>
+
+**前提条件**: `snippets` ディレクトリ内にスニペットファイルを作成してください。
+
+<Note>
+  `snippets` ディレクトリ内のページはすべてスニペットとして扱われ、単独のページとしては
+  レンダリングされません。スニペットを単独のページとして作成したい場合は、そのスニペットを
+  別のファイルにインポートし、コンポーネントとして呼び出してください。
+</Note>
+
+<div id="default-export">
+  ### 既定のエクスポート
+</div>
+
+1. 複数の場所で再利用したいコンテンツをスニペットファイルに追加します。必要に応じて、スニペットをインポートする際に props で渡して埋め込める変数を追加できます。
+
+```mdx snippets/my-snippet.mdx
+Hello world! これは複数のページで再利用したいコンテンツです。今日のキーワードは
+{word}です。
+```
+
+<Warning>
+  インポートを機能させるには、再利用したいコンテンツを `snippets` ディレクトリ内に置いてください。
+</Warning>
+
+2. スニペットを宛先ファイルにインポートします。
+
+```mdx destination-file.mdx
+---
+title: 私のタイトル
+description: 私の説明
+---
+
+import MySnippet from '/snippets/path/to/my-snippet.mdx';
+
+## ヘッダー
+
+Lorem impsum dolor sit amet.
+
+<MySnippet word="bananas" />
+```
+
+
+<div id="reusable-variables">
+  ### 再利用可能な変数
+</div>
+
+1. スニペットファイルから変数をエクスポートします：
+
+```mdx snippets/path/to/custom-variables.mdx
+export const myName = '私の名前';
+
+export const myObject = { fruit: 'いちご' };
+```
+
+2. 対象ファイルからスニペットをインポートし、変数を使用します：
+
+```mdx destination-file.mdx
+---
+title: 私のタイトル
+description: 私の説明
+---
+
+import { myName, myObject } from '/snippets/path/to/custom-variables.mdx';
+
+こんにちは、私の名前は {myName} で、{myObject.fruit} が好きです。
+```
+
+
+<div id="reusable-components">
+  ### 再利用可能なコンポーネント
+</div>
+
+1. スニペットファイル内で、アロー関数としてエクスポートする形で、props を受け取るコンポーネントを作成します。
+
+```mdx snippets/custom-component.mdx
+export const MyComponent = ({ title }) => (
+  <div>
+    <h1>{title}</h1>
+    <p>... スニペットの内容 ...</p>
+  </div>
+);
+```
+
+<Warning>
+  MDX はアロー関数の本体ではコンパイルされません。可能であれば HTML
+  構文を使うか、MDX を使う必要がある場合は default export を使用してください。
+</Warning>
+
+2. 対象ファイルにスニペットをインポートし、props を渡します
+
+```mdx destination-file.mdx
+---
+title: 私のタイトル
+description: 私の説明
+---
+
+import { MyComponent } from '/snippets/custom-component.mdx';
+
+Lorem ipsum dolor sit amet.
+
+<MyComponent title={'カスタムタイトル'} />
+```

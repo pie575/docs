@@ -1,0 +1,100 @@
+---
+title: "Windsurf-Setup"
+description: "Windsurf für deinen Dokumentations-Workflow konfigurieren"
+icon: "water"
+---
+
+Konfiguriere den Cascade AI-Assistenten von Windsurf, um dich beim Schreiben und Pflegen von Dokumentationen zu unterstützen. Dieser Leitfaden zeigt, wie du Windsurf speziell für deinen Mintlify-Dokumentations-Workflow einrichtest.
+
+<div id="prerequisites">
+  ## Voraussetzungen
+</div>
+
+- Windsurf-Editor installiert
+- Zugriff auf Ihr Dokumentations-Repository
+
+<div id="workspace-rules">
+  ## Workspace-Regeln
+</div>
+
+Erstellen Sie Workspace-Regeln, die Windsurf mit context zu Ihrem Dokumentationsprojekt und Ihren Standards versorgen.
+
+Erstellen Sie `.windsurf/rules.md` im Projektstammverzeichnis:
+
+````markdown
+# Mintlify-Regel für technisches Schreiben
+
+## Projektkontext
+
+- Dies ist ein Dokumentationsprojekt auf der Mintlify-Plattform
+- Wir verwenden MDX-Dateien mit YAML-Frontmatter  
+- Die Navigation wird in `docs.json` konfiguriert
+- Wir befolgen bewährte Praktiken für technisches Schreiben
+
+## Schreibstandards
+
+- Verwenden Sie die zweite Person („Sie") für Anweisungen
+- Schreiben Sie im Aktiv und Präsens
+- Beginnen Sie Verfahren mit Voraussetzungen
+- Geben Sie erwartete Ergebnisse für wichtige Schritte an
+- Verwenden Sie beschreibende, schlüsselwortreiche Überschriften
+- Halten Sie Sätze prägnant, aber informativ
+
+## Erforderliche Seitenstruktur
+
+Jede Seite muss mit Frontmatter beginnen:
+
+```yaml
+---
+title: „Klarer, spezifischer Titel"
+description: „Prägnante Beschreibung für SEO und Navigation"
+---
+```
+
+## Mintlify-Komponenten
+
+### Callouts
+
+- `<Note>` für hilfreiche ergänzende Informationen
+- `<Warnung>` für wichtige Warnungen und Breaking Changes
+- `<Hinweis>` für bewährte Praktiken und Expertenratschläge  
+- `<Info>` für neutrale kontextuelle Informationen
+- `<Check>` für Erfolgsbestätigungen
+
+### Code-Beispiele
+
+- Fügen Sie bei Bedarf vollständige, ausführbare Beispiele hinzu
+- Verwenden Sie `<CodeGroup>` für Beispiele in mehreren Sprachen
+- Geben Sie Sprach-Tags für alle Code-Blöcke an
+- Verwenden Sie realistische Daten, keine Platzhalter
+- Verwenden Sie `<RequestExample>` und `<ResponseExample>` für API-Dokumentation
+
+### Verfahren
+
+- Verwenden Sie die `<Steps>`-Komponente für sequenzielle Anweisungen
+- Fügen Sie Verifizierungsschritte mit `<Check>`-Komponenten hinzu, wenn relevant
+- Unterteilen Sie komplexe Verfahren in kleinere Schritte
+
+### Inhaltsorganisation
+
+- Verwenden Sie `<Tabs>` für plattformspezifische Inhalte
+- Verwenden Sie `<Accordion>` für progressive Offenlegung
+- Verwenden Sie `<Card>` und `<CardGroup>` zum Hervorheben von Inhalten
+- Umschließen Sie Bilder mit `<Frame>`-Komponenten mit beschreibendem Alt-Text
+
+## Anforderungen für API‑Dokumentation
+
+- Dokumentieren Sie alle Parameter mit `<ParamField>` 
+- Zeigen Sie die Antwortstruktur mit `<ResponseField>`
+- Fügen Sie sowohl Erfolgs- als auch Fehlerbeispiele hinzu
+- Verwenden Sie `<Expandable>` für verschachtelte Objekteigenschaften
+- Fügen Sie immer Authentifizierungsbeispiele hinzu
+
+## Qualitätsstandards
+
+- Testen Sie alle Code-Beispiele vor der Veröffentlichung
+- Verwenden Sie relative Pfade für interne Links
+- Fügen Sie Alt-Text für alle Bilder hinzu
+- Stellen Sie eine ordnungsgemäße Überschriftenhierarchie sicher (beginnen Sie mit h2)
+- Überprüfen Sie bestehende Muster auf Konsistenz
+````

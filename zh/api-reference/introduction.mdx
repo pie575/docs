@@ -1,0 +1,37 @@
+---
+title: 'Introduction'
+description: '用于展示 API（Application Programming Interface，应用程序编程接口）端点的示例部分'
+---
+
+<Note>
+  如果你不需要构建 API（Application Programming Interface，应用程序编程接口）参考文档，可以通过删除
+  api-reference 文件夹来移除此部分。
+</Note>
+
+<div id="welcome">
+  ## 欢迎
+</div>
+
+构建 API 文档有两种方式：[OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) 和 [MDX 组件](https://mintlify.com/docs/api-playground/mdx/configuration)。在入门套件中，我们使用以下 OpenAPI 规范。
+
+<Card
+  title="Plant Store Endpoints"
+  icon="leaf"
+  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+>
+  查看 OpenAPI 规范文件
+</Card>
+
+<div id="authentication">
+  ## 身份验证
+</div>
+
+所有 API（Application Programming Interface，应用程序编程接口）端点均使用 Bearer 令牌进行身份验证，相关配置将从规范文件中读取。
+
+```json
+"security": [
+  {
+    "bearerAuth": []
+  }
+]
+```

@@ -1,0 +1,112 @@
+---
+title: 'Markdown-Syntax'
+description: 'Text, Titel und Formatierung in standardmäßigem Markdown'
+icon: 'text-size'
+---
+
+<div id="titles">
+  ## Titel
+</div>
+
+Am besten für Abschnittsüberschriften geeignet.
+
+```md
+<div id="titles">
+  ## Titel
+</div>
+
+```
+
+
+<div id="subtitles">
+  ### Untertitel
+</div>
+
+Am besten für Überschriften von Unterabschnitten geeignet.
+
+```md
+<div id="subtitles">
+  ### Untertitel
+</div>
+
+```
+
+<Tip>
+  Jeder **Titel** und jeder **Untertitel** erzeugt einen Anker und erscheint außerdem im Inhaltsverzeichnis auf der rechten Seite.
+</Tip>
+
+
+<div id="text-formatting">
+  ## Textformatierung
+</div>
+
+Wir unterstützen die meisten Markdown-Formatierungen. Setze einfach `**`, `_` oder `~` um Text, um ihn zu formatieren.
+
+| Stil            | So schreibst du es     | Ergebnis          |
+| --------------- | ---------------------- | ----------------- |
+| Fett            | `**bold**`             | **bold**          |
+| Kursiv          | `_italic_`             | _italic_          |
+| Durchgestrichen | `~strikethrough~`      | ~strikethrough~   |
+
+Du kannst diese kombinieren. Schreibe zum Beispiel `**_bold and italic_**`, um **_bold and italic_**-Text zu erhalten.
+
+Für hoch- und tiefgestellten Text musst du HTML verwenden. Setze dazu `<sup>` bzw. `<sub>` um deinen Text.
+
+| Textgröße   | So schreibst du es            | Ergebnis                 |
+| ----------- | ----------------------------- | ------------------------ |
+| Hochgestellt | `<sup>superscript</sup>`     | <sup>superscript</sup>   |
+| Tiefgestellt | `<sub>subscript</sub>`       | <sub>subscript</sub>     |
+
+<div id="linking-to-pages">
+  ## Verlinken auf Seiten
+</div>
+
+Du kannst einen Link hinzufügen, indem du Text in `[]()` setzt. Du würdest `[link to google](https://google.com)` schreiben, um zu [link to google](https://google.com) zu verlinken.
+
+Links zu Seiten in deiner Doku müssen vom Root aus relativ sein. Das heißt, du solltest den vollständigen Ordnerpfad angeben. Zum Beispiel verlinkt `[link to text](/writing-content/text)` auf die Seite „Text“ im Bereich Komponenten.
+
+Relative Links wie `[link to text](../text)` laden langsamer, weil wir sie nicht so leicht optimieren können.
+
+<div id="blockquotes">
+  ## Blockzitate
+</div>
+
+<div id="singleline">
+  ### Einzeiler
+</div>
+
+Um ein Blockzitat zu erstellen, füge ein `>` vor einen Absatz ein.
+
+> Dorothy folgte ihr durch viele der schönen Räume in ihrem Schloss.
+
+```md
+> Dorothy folgte ihr durch viele der schönen Räume ihres Schlosses.
+```
+
+
+<div id="multiline">
+  ### Mehrzeilig
+</div>
+
+> Dorothy folgte ihr durch viele der wunderschönen Räume in ihrem Schloss.
+>
+> Die Hexe trug ihr auf, die Töpfe und Kessel zu reinigen, den Boden zu fegen und das Feuer mit Holz zu schüren.
+
+```md
+> Dorothy folgte ihr durch viele der schönen Räume in ihrem Schloss.
+>
+> Die Hexe befahl ihr, die Töpfe und Kessel zu reinigen, den Boden zu fegen und das Feuer mit Holz am Brennen zu halten.
+```
+
+
+<div id="latex">
+  ### LaTeX
+</div>
+
+Mintlify unterstützt [LaTeX](https://www.latex-project.org) über die LaTeX-Komponente.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

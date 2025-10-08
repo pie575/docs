@@ -1,0 +1,90 @@
+---
+title: "Avvio rapido Yay"
+description: "Inizia a creare una documentazione straordinaria in pochi minuti"
+---
+
+<div id="get-started-in-three-steps">
+  ## Inizia in tre passaggi
+</div>
+
+Esegui in locale il tuo sito di documentazione e crea la tua prima personalizzazione.
+
+<div id="step-1-set-up-your-local-environment">
+  ### Passaggio 1: Configura l’ambiente locale
+</div>
+
+<AccordionGroup>
+  <Accordion icon="copy" title="Clona la documentazione in locale">
+    Durante l’onboarding, hai creato un repository GitHub con i contenuti della tua documentazione, se non ne avevi già uno. Puoi trovare il link a questo repository nella tua [dashboard](https://dashboard.mintlify.com).
+
+    Per clonare il repository in locale e poter apportare e visualizzare in anteprima le modifiche alla documentazione, segui la guida [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) nella documentazione di GitHub.
+  </Accordion>
+
+  <Accordion icon="rectangle-terminal" title="Avvia il server di anteprima">
+    1. Installa la CLI di Mintlify: `npm i -g mint`
+    2. Vai alla directory della documentazione ed esegui: `mint dev`
+    3. Apri `http://localhost:3000` per vedere la documentazione in tempo reale!
+
+    <Tip>L’anteprima si aggiorna automaticamente mentre modifichi i file.</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-2-deploy-your-changes">
+  ### Passaggio 2: Distribuisci le modifiche
+</div>
+
+<AccordionGroup>
+  <Accordion icon="github" title="Installa la nostra app GitHub">
+    Installa l&#39;app GitHub di Mintlify dalla tua [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
+
+    La nostra app GitHub distribuisce automaticamente le modifiche al tuo sito di documentazione, così non devi occuparti tu delle distribuzioni.
+  </Accordion>
+
+  <Accordion icon="palette" title="Aggiorna il nome e i colori del tuo sito">
+    Come prima modifica, aggiorniamo il nome e i colori del tuo sito di documentazione.
+
+    1. Apri `docs.json` nel tuo editor.
+    2. Imposta il campo `"name"` con il nome del tuo progetto.
+    3. Aggiorna `"colors"` per allinearli al tuo brand.
+    4. Salva e visualizza subito le modifiche su `http://localhost:3000`.
+
+    <Tip>Prova a cambiare il colore principale per vedere subito la differenza!</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-3-go-live">
+  ### Step 3: Pubblica
+</div>
+
+<Accordion icon="rocket" title="Pubblica la tua documentazione">
+  1. Effettua il commit e fai il push delle modifiche.
+  2. La tua documentazione si aggiornerà e sarà online in pochi istanti!
+</Accordion>
+
+<div id="next-steps">
+  ## Prossimi passi
+</div>
+
+Ora che la tua documentazione è operativa, esplora queste funzionalità chiave:
+
+<CardGroup cols={2}>
+  <Card title="Write Content" icon="pen-to-square" href="/it/essentials/markdown">
+    Impara la sintassi MDX e inizia a scrivere la tua documentazione.
+  </Card>
+
+  <Card title="Customize style" icon="palette" href="/it/essentials/settings">
+    Allinea perfettamente la tua documentazione al tuo brand.
+  </Card>
+
+  <Card title="Add code examples" icon="square-code" href="/it/essentials/code">
+    Includi blocchi di codice con evidenziazione della sintassi.
+  </Card>
+
+  <Card title="API documentation" icon="code" href="/it/api-reference/introduction">
+    Genera automaticamente la Documentazione dell&#39;API dalle specifiche OpenAPI.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Hai bisogno di aiuto?** Consulta la nostra [documentazione completa](https://mintlify.com/docs) o unisciti alla nostra [community](https://mintlify.com/community).
+</Note>

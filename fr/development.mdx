@@ -1,0 +1,109 @@
+---
+title: 'Development'
+description: 'Prévisualisez les modifications en local pour mettre à jour votre documentation'
+---
+
+<Info>
+  **Prérequis** :
+  - Node.js version 19 ou supérieure
+  - Un dépôt de documentation avec un fichier `docs.json`
+</Info>
+
+Suivez ces étapes pour installer et exécuter Mintlify sur votre système d’exploitation.
+
+<Steps>
+<Step title="Installer l’interface en ligne de commande Mintlify">
+
+```bash
+npm i -g mint
+```
+</Step>
+
+<Step title="Prévisualiser en local">
+
+Accédez au répertoire de votre documentation où se trouve votre fichier `docs.json`, puis exécutez la commande suivante :
+
+```bash
+mint dev
+```
+
+Un aperçu local de votre documentation sera disponible à `http://localhost:3000`.
+
+</Step>
+</Steps>
+
+<div id="custom-ports">
+  ## Ports personnalisés
+</div>
+
+Par défaut, Mintlify utilise le port 3000. Vous pouvez personnaliser le port sur lequel Mintlify s’exécute en utilisant l’option `--port`. Par exemple, pour exécuter Mintlify sur le port 3333, utilisez cette commande :
+
+```bash
+mint dev --port 3333
+```
+
+Si vous tentez d’exécuter Mintlify sur un port déjà utilisé, il passera au port disponible suivant :
+
+```md
+Le port 3000 est déjà utilisé. Tentative sur le port 3001.
+```
+
+
+<div id="mintlify-versions">
+  ## Versions de Mintlify
+</div>
+
+Chaque version du CLI est associée à une version spécifique de Mintlify. Si votre prévisualisation locale ne correspond pas à la version de production, mettez à jour le CLI :
+
+```bash
+npm mint update
+```
+
+
+<div id="validating-links">
+  ## Validation des liens
+</div>
+
+L’interface en ligne de commande (CLI) peut vous aider à valider les liens de votre documentation. Pour repérer les liens cassés, exécutez la commande suivante :
+
+```bash
+mint broken-links
+```
+
+
+<div id="deployment">
+  ## Déploiement
+</div>
+
+Si le déploiement est réussi, vous devriez voir ce qui suit :
+
+<Frame>
+  <img src="/images/checks-passed.png" alt="Capture d’écran d’un message confirmant le déploiement indiquant « All checks have passed. »" style={{ borderRadius: '0.5rem' }} />
+</Frame>
+
+<div id="code-formatting">
+  ## Formatage du code
+</div>
+
+Nous vous recommandons d’utiliser des extensions dans votre IDE pour reconnaître et formater MDX. Si vous utilisez VS Code, envisagez l’[extension MDX pour VS Code](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) pour la coloration syntaxique, ainsi que [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) pour le formatage du code.
+
+<div id="troubleshooting">
+  ## Dépannage
+</div>
+
+<AccordionGroup>
+  <Accordion title="Erreur : impossible de charger le module « sharp » avec l’environnement d’exécution darwin-arm64">
+
+    Cela peut être dû à une version obsolète de Node. Essayez les étapes suivantes :
+    1. Supprimez la version du CLI actuellement installée : `npm remove -g mint`
+    2. Mettez à niveau vers Node v19 ou une version supérieure.
+    3. Réinstallez le CLI : `npm i -g mint`
+  </Accordion>
+
+  <Accordion title="Problème : erreur inconnue rencontrée">
+  
+    Solution : Accédez à la racine de votre appareil et supprimez le dossier `~/.mintlify`. Puis exécutez à nouveau `mint dev`.
+  </Accordion>
+</AccordionGroup>
+
+Vous vous demandez ce qui a changé dans la dernière version du CLI ? Consultez le [journal des modifications du CLI](https://www.npmjs.com/package/mintlify?activeTab=versions).

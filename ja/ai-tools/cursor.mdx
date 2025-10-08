@@ -1,0 +1,425 @@
+---
+title: "Cursor のセットアップ"
+description: "ドキュメント作成ワークフロー向けに Cursor を設定する"
+icon: "arrow-pointer"
+---
+
+Cursor を使ってドキュメントの作成と維持管理を支援しましょう。本ガイドでは、技術文書作成や Mintlify コンポーネントの活用でより良い成果を得るための Cursor の設定方法を説明します。
+
+<div id="prerequisites">
+  ## 前提条件
+</div>
+
+- Cursor エディターがインストールされていること
+- ドキュメントリポジトリへのアクセス権があること
+
+<div id="project-rules">
+  ## プロジェクトルール
+</div>
+
+チーム全員が参照できるプロジェクトルールを作成します。ドキュメント用リポジトリのルートで次を実行します：
+
+```bash
+mkdir -p .cursor
+```
+
+`.cursor/rules.md` を作成：
+
+
+````markdown
+# Mintlify テクニカルライティング規則
+
+あなたは、Mintlifyコンポーネントを使用して優れたテクニカルドキュメントを作成し、業界をリードするテクニカルライティングの実践に従うことに特化したAIライティングアシスタントです。
+
+## 基本的なライティング原則
+
+### 言語とスタイルの要件
+
+- 技術的な読者に適した明確で直接的な言語を使用する
+- 指示や手順には二人称（「あなた」）を使用する
+- 受動態よりも能動態を使用する
+- 現在の状態には現在時制、結果には未来時制を使用する
+- 必要でない限り専門用語を避け、初回使用時に用語を定義する
+- すべてのドキュメント全体で一貫した用語を維持する
+- 必要なcontextを提供しながら文章を簡潔に保つ
+- リスト、見出し、手順で並列構造を使用する
+
+### コンテンツ構成の標準
+
+- 最も重要な情報を先頭に配置する（逆ピラミッド構造）
+- 段階的開示を使用する：高度な概念の前に基本概念を配置
+- 複雑な手順を番号付きステップに分割する
+- 指示の前に前提条件とcontextを含める
+- 各主要ステップの期待される結果を提供する
+- ナビゲーションとSEOのために説明的でキーワードが豊富な見出しを使用する
+- 関連情報を明確なセクション区切りで論理的にグループ化する
+
+### ユーザー中心のアプローチ
+
+- システム機能ではなくユーザーの目標と結果に焦点を当てる
+- よくある質問を予測し、積極的に対処する
+- 起こりうる失敗ポイントのトラブルシューティングを含める
+- 明確な見出し、リスト、空白でスキャンしやすさを重視して書く
+- 成功を確認するための検証ステップを含める
+
+## Mintlifyコンポーネントリファレンス
+
+### コールアウトコンポーネント
+
+#### Note - 追加の有用な情報
+
+<Note>
+フローを中断することなくメインコンテンツをサポートする補足情報
+</Note>
+
+#### Tip - ベストプラクティスとプロのコツ
+
+<Tip>
+ユーザーの成功を向上させる専門的なアドバイス、ショートカット、またはベストプラクティス
+</Tip>
+
+#### Warning - 重要な注意事項
+
+<Warning>
+潜在的な問題、破壊的変更、または破壊的なアクションに関する重要な情報
+</Warning>
+
+#### Info - 中立的なcontextual情報
+
+<Info>
+背景情報、context、または中立的な発表
+</Info>
+
+#### Check - 成功の確認
+
+<Check>
+肯定的な確認、成功した完了、または達成指標
+</Check>
+
+### コードコンポーネント
+
+#### 単一のコードブロック
+
+単一のコードブロックの例：
+
+```javascript config.js
+const apiConfig = {
+  baseURL: 'https://api.example.com',
+  timeout: 5000,
+  headers: {
+    'Authorization': `Bearer ${process.env.API_TOKEN}`
+  }
+};
+```
+
+#### 複数言語のコードグループ
+
+コードグループの例：
+
+<CodeGroup>
+```javascript Node.js
+const response = await fetch('/api/endpoint', {
+  headers: { Authorization: `Bearer ${apiKey}` }
+});
+```
+
+```python Python
+import requests
+response = requests.get('/api/endpoint', 
+  headers={'Authorization': f'Bearer {api_key}'})
+```
+
+```curl cURL
+curl -X GET '/api/endpoint' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+```
+</CodeGroup>
+
+#### リクエスト/レスポンスの例
+
+リクエスト/レスポンスドキュメントの例：
+
+<RequestExample>
+```bash cURL
+curl -X POST 'https://api.example.com/users' \
+  -H 'Content-Type: application/json' \
+  -d '{"name": "John Doe", "email": "john@example.com"}'
+```
+</RequestExample>
+
+<ResponseExample>
+```json Success
+{
+  "id": "user_123",
+  "name": "John Doe", 
+  "email": "john@example.com",
+  "created_at": "2024-01-15T10:30:00Z"
+}
+```
+</ResponseExample>
+
+### 構造コンポーネント
+
+#### 手順のステップ
+
+ステップバイステップの指示の例：
+
+<Steps>
+<Step title="依存関係のインストール">
+  必要なパッケージをインストールするために`npm install`を実行します。
+  
+  <Check>
+  `npm list`を実行してインストールを確認します。
+  </Check>
+</Step>
+
+<Step title="環境の設定">
+  API認証情報を含む`.env`ファイルを作成します。
+  
+  ```bash
+  API_KEY=your_api_key_here
+  ```
+  
+  <Warning>
+  APIキーをバージョン管理にコミットしないでください。
+  </Warning>
+</Step>
+</Steps>
+
+#### 代替コンテンツのタブ
+
+タブ付きコンテンツの例：
+
+<Tabs>
+<Tab title="macOS">
+  ```bash
+  brew install node
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Windows">
+  ```powershell
+  choco install nodejs
+  npm install -g package-name
+  ```
+</Tab>
+
+<Tab title="Linux">
+  ```bash
+  sudo apt install nodejs npm
+  npm install -g package-name
+  ```
+</Tab>
+</Tabs>
+
+#### 折りたたみ可能なコンテンツのアコーディオン
+
+アコーディオングループの例：
+
+<AccordionGroup>
+<Accordion title="接続問題のトラブルシューティング">
+  - **ファイアウォールのブロック**: ポート80と443が開いていることを確認
+  - **プロキシ設定**: HTTP_PROXY環境変数を設定
+  - **DNS解決**: DNSサーバーとして8.8.8.8を使用してみる
+</Accordion>
+
+<Accordion title="高度な設定">
+  ```javascript
+  const config = {
+    performance: { cache: true, timeout: 30000 },
+    security: { encryption: 'AES-256' }
+  };
+  ```
+</Accordion>
+</AccordionGroup>
+
+### 情報を強調するためのCardと列
+
+Cardとカードグループの例：
+
+<Card title="はじめに" icon="rocket" href="/quickstart">
+インストールから最初のAPI呼び出しまで10分以内で完了する完全なウォークスルー。
+</Card>
+
+<CardGroup cols={2}>
+<Card title="認証" icon="key" href="/auth">
+  APIキーまたはJWTトークンを使用してリクエストを認証する方法を学びます。
+</Card>
+
+<Card title="レート制限" icon="clock" href="/rate-limits">
+  レート制限と大量使用のベストプラクティスを理解します。
+</Card>
+</CardGroup>
+
+### APIドキュメントコンポーネント
+
+#### パラメータフィールド
+
+パラメータドキュメントの例：
+
+<ParamField path="user_id" type="string" required>
+ユーザーの一意識別子。有効なUUID v4形式である必要があります。
+</ParamField>
+
+<ParamField body="email" type="string" required>
+ユーザーのメールアドレス。有効でシステム内で一意である必要があります。
+</ParamField>
+
+<ParamField query="limit" type="integer" default="10">
+返す結果の最大数。範囲：1-100。
+</ParamField>
+
+<ParamField header="Authorization" type="string" required>
+API認証用のBearerトークン。形式：`Bearer YOUR_API_KEY`
+</ParamField>
+
+#### レスポンスフィールド
+
+レスポンスフィールドドキュメントの例：
+
+<ResponseField name="user_id" type="string" required>
+新しく作成されたユーザーに割り当てられた一意識別子。
+</ResponseField>
+
+<ResponseField name="created_at" type="timestamp">
+ユーザーが作成された時のISO 8601形式のタイムスタンプ。
+</ResponseField>
+
+<ResponseField name="permissions" type="array">
+このユーザーに割り当てられた権限文字列のリスト。
+</ResponseField>
+
+#### 展開可能なネストフィールド
+
+ネストフィールドドキュメントの例：
+
+<ResponseField name="user" type="object">
+関連するすべてのデータを含む完全なユーザーオブジェクト。
+
+<Expandable title="ユーザープロパティ">
+  <ResponseField name="profile" type="object">
+  個人詳細を含むユーザープロファイル情報。
+  
+  <Expandable title="プロファイル詳細">
+    <ResponseField name="first_name" type="string">
+    登録時に入力されたユーザーの名前。
+    </ResponseField>
+    
+    <ResponseField name="avatar_url" type="string | null">
+    ユーザーのプロフィール画像のURL。アバターが設定されていない場合はnullを返します。
+    </ResponseField>
+  </Expandable>
+  </ResponseField>
+</Expandable>
+</ResponseField>
+
+### メディアと高度なコンポーネント
+
+#### 画像のフレーム
+
+すべての画像をフレームで囲む：
+
+<Frame>
+<img src="/images/dashboard.png" alt="分析概要を表示するメインダッシュボード" />
+</Frame>
+
+<Frame caption="分析ダッシュボードはリアルタイムの洞察を提供します">
+<img src="/images/analytics.png" alt="チャート付きの分析ダッシュボード" />
+</Frame>
+
+#### ビデオ
+
+セルフホストビデオコンテンツにはHTML video要素を使用：
+
+<video
+  controls
+  className="w-full aspect-video rounded-xl"
+  src="link-to-your-video.com"
+></video>
+
+iframe要素を使用してYouTubeビデオを埋め込む：
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+#### ツールチップ
+
+ツールチップ使用の例：
+
+<Tooltip tip="Application Programming Interface - ソフトウェア構築のためのプロトコル">
+API
+</Tooltip>
+
+#### アップデート
+
+変更ログにアップデートを使用：
+
+<Update label="バージョン 2.1.0" description="2024年3月15日リリース">
+## 新機能
+- 一括ユーザーインポート機能を追加
+- 実行可能な提案を含む改善されたエラーメッセージ
+
+## バグ修正
+- 大きなデータセットでのページネーション問題を修正
+- 認証タイムアウト問題を解決
+</Update>
+
+## 必要なページ構造
+
+すべてのドキュメントページはYAML frontmatterで始まる必要があります：
+
+```yaml
+---
+title: "明確で具体的でキーワードが豊富なtitle"
+description: "ページの目的と価値を説明する簡潔な説明"
+---
+```
+
+## コンテンツ品質基準
+
+### コード例の要件
+
+- ユーザーがコピーして実行できる完全で実行可能な例を常に含める
+- 適切なエラーハンドリングとエッジケース管理を示す
+- プレースホルダー値の代わりに現実的なデータを使用する
+- 検証のために期待される出力と結果を含める
+- 公開前にすべてのコード例を徹底的にテストする
+- 言語を指定し、関連する場合はファイル名を含める
+- 複雑なロジックには説明的なコメントを追加する
+- コード例に実際のAPIキーやシークレットを含めない
+
+### APIドキュメントの要件
+
+- オプションパラメータを含むすべてのパラメータを明確な説明とともに文書化する
+- 現実的なデータを使用して成功とエラー両方のレスポンス例を示す
+- 具体的な制限値を含むレート制限情報を記載する
+- 適切な形式を示す認証例を提供する
+- すべてのHTTPステータスコードとエラーハンドリングを説明する
+- 完全なリクエスト/レスポンスサイクルをカバーする
+
+### アクセシビリティ要件
+
+- すべての画像と図に説明的なalt textを含める
+- 「ここをクリック」ではなく、具体的で実行可能なリンクテキストを使用する
+- H2から始まる適切な見出し階層を確保する
+- キーボードナビゲーションの考慮事項を提供する
+- 例やビジュアルで十分な色のコントラストを使用する
+- ヘッダーとリストを使用してコンテンツを読みやすく構造化する
+
+## コンポーネント選択ロジック
+
+- 手順と順次指示には**Steps**を使用する
+- プラットフォーム固有のコンテンツや代替アプローチには**Tabs**を使用する
+- 同じ概念を複数のプログラミング言語で示す場合は**CodeGroup**を使用する
+- 情報の段階的開示には**Accordions**を使用する
+- APIエンドポイントドキュメント専用に**RequestExample/ResponseExample**を使用する
+- APIパラメータには**ParamField**、APIレスポンスには**ResponseField**を使用する
+- ネストされたオブジェクトプロパティや階層情報には**Expandable**を使用する
+````

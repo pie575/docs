@@ -1,0 +1,344 @@
+---
+title: "Globale Einstellungen"
+description: "Mit der Datei docs.json haben Sie in Mintlify die vollständige Kontrolle über das Aussehen und Verhalten Ihrer Dokumentation"
+icon: 'gear'
+---
+
+Jede Mintlify‑Site benötigt eine `docs.json`‑Datei mit den zentralen Konfigurationseinstellungen. Weitere Informationen zu den [Eigenschaften](#properties) finden Sie unten.
+
+<div id="properties">
+  ## Eigenschaften
+</div>
+
+<ResponseField name="name" type="string" required>
+  Name Ihres Projekts. Wird für den globalen Titel verwendet.
+
+  Beispiel: `mintlify`
+</ResponseField>
+
+<ResponseField name="navigation" type="Navigation[]" required>
+  Ein Array von Gruppen mit allen Seiten innerhalb dieser Gruppe
+
+  <Expandable title="Navigation">
+    <ResponseField name="group" type="string">
+      Der Name der Gruppe.
+
+      Beispiel: `Settings`
+    </ResponseField>
+
+    <ResponseField name="pages" type="string[]">
+      Die relativen Pfade zu den Markdown-Dateien, die als Seiten dienen.
+
+      Beispiel: `["customization", "page"]`
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="logo" type="string or object">
+  Pfad zum Logo oder Objekt mit Pfaden zu Logos für „Light“- und „Dark“-Modus
+
+  <Expandable title="Logo">
+    <ResponseField name="light" type="string">
+      Pfad zum Logo im Light-Modus
+    </ResponseField>
+
+    <ResponseField name="dark" type="string">
+      Pfad zum Logo im Dark-Modus
+    </ResponseField>
+
+    <ResponseField name="href" type="string" default="/">
+      Ziel, zu dem ein Klick auf das Logo führt
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="favicon" type="string">
+  Pfad zum Favicon
+</ResponseField>
+
+<ResponseField name="colors" type="Colors">
+  Hex-Farbwerte für Ihr globales Theme
+
+  <Expandable title="Colors">
+    <ResponseField name="primary" type="string" required>
+      Die Primärfarbe. Wird am häufigsten für hervorgehobene Inhalte, Abschnittsüberschriften und Akzente im Light-Modus verwendet
+    </ResponseField>
+
+    <ResponseField name="light" type="string">
+      Die Primärfarbe für den Dark-Modus. Wird am häufigsten für hervorgehobene Inhalte, Abschnittsüberschriften und Akzente im Dark-Modus verwendet
+    </ResponseField>
+
+    <ResponseField name="dark" type="string">
+      Die Primärfarbe für wichtige Buttons
+    </ResponseField>
+
+    <ResponseField name="background" type="object">
+      Die Hintergrundfarbe im Light- und Dark-Modus
+
+      <Expandable title="Object">
+        <ResponseField name="light" type="string" required>
+          Der Hex-Farbwert des Hintergrunds im Light-Modus
+        </ResponseField>
+
+        <ResponseField name="dark" type="string" required>
+          Der Hex-Farbwert des Hintergrunds im Dark-Modus
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="topbarLinks" type="TopbarLink[]">
+  Array aus `name`- und `url`-Werten der Links, die Sie in die Topbar aufnehmen möchten
+
+  <Expandable title="TopbarLink">
+    <ResponseField name="name" type="string">
+      Der Name des Buttons.
+
+      Beispiel: `Contact us`
+    </ResponseField>
+
+    <ResponseField name="url" type="string">
+      Die URL, die beim Klicken auf den Button aufgerufen wird. Beispiel: `https://mintlify.com/docs`
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="topbarCtaButton" type="Call to Action">
+  <Expandable title="Topbar Call to Action">
+    <ResponseField name="type" type={'"link" or "github"'} default="link">
+      „link“ zeigt einen Button. „github“ zeigt die Repository-Informationen unter der angegebenen URL, einschließlich der Anzahl der GitHub-Sterne.
+    </ResponseField>
+
+    <ResponseField name="url" type="string">
+      Wenn `link`: Ziel des Buttons.
+
+      Wenn `github`: Link zum Repository, aus dem GitHub-Informationen geladen werden.
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Text im Button. Nur erforderlich, wenn `type` ein `link` ist.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="versions" type="string[]">
+  Array von Versionsnamen. Verwenden Sie dies nur, wenn Sie verschiedene Versionen
+  der Dokumentation mit einem Dropdown in der Navigationsleiste anzeigen möchten.
+</ResponseField>
+
+<ResponseField name="anchors" type="Anchor[]">
+  Ein Array von Ankern; enthält `icon`, `color` und `url`.
+
+  <Expandable title="Anchor">
+    <ResponseField name="icon" type="string">
+      Das [Font Awesome](https://fontawesome.com/search?q=heart)-Icon, das verwendet wird, um den Anker hervorzuheben.
+
+      Beispiel: `comments`
+    </ResponseField>
+
+    <ResponseField name="name" type="string">
+      Der Name des Anker-Labels.
+
+      Beispiel: `Community`
+    </ResponseField>
+
+    <ResponseField name="url" type="string">
+      Der Anfang der URL, der definiert, welche Seiten zum Anker gehören. In der Regel ist dies der Name des Ordners, in den du deine Seiten legst.
+    </ResponseField>
+
+    <ResponseField name="color" type="string">
+      Die Hex-Farbe des Hintergrunds des Anker-Icons. Kann auch ein Verlauf sein, wenn du ein Objekt mit den Eigenschaften `from` und `to` übergibst, die jeweils eine Hex-Farbe sind.
+    </ResponseField>
+
+    <ResponseField name="version" type="string">
+      Verwenden, wenn ein Anker ausgeblendet bleiben soll, bis die passende Docs-Version ausgewählt ist.
+    </ResponseField>
+
+    <ResponseField name="isDefaultHidden" type="boolean" default="false">
+      Übergib `true`, wenn der Anker ausgeblendet bleiben soll, bis du jemanden direkt auf Docs verlinkst, die darin liegen.
+    </ResponseField>
+
+    <ResponseField name="iconType" default="duotone" type="string">
+      Eines von: &quot;brands&quot;, &quot;duotone&quot;, &quot;light&quot;, &quot;sharp-solid&quot;, &quot;solid&quot; oder &quot;thin&quot;
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="topAnchor" type="Object">
+  Überschreibe die Standardkonfigurationen für den obersten Anker.
+
+  <Expandable title="Object">
+    <ResponseField name="name" default="Documentation" type="string">
+      Der Name des obersten Ankers
+    </ResponseField>
+
+    <ResponseField name="icon" default="book-open" type="string">
+      Font-Awesome-Icon.
+    </ResponseField>
+
+    <ResponseField name="iconType" default="duotone" type="string">
+      Eines von: &quot;brands&quot;, &quot;duotone&quot;, &quot;light&quot;, &quot;sharp-solid&quot;, &quot;solid&quot; oder &quot;thin&quot;
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="tabs" type="Tabs[]">
+  Ein Array von Navigations-Tabs.
+
+  <Expandable title="Tabs">
+    <ResponseField name="name" type="string">
+      Der Name des Tab-Labels.
+    </ResponseField>
+
+    <ResponseField name="url" type="string">
+      Der Anfang der URL, der definiert, welche Seiten zum Tab gehören. In der Regel
+      ist dies der Name des Ordners, in den du deine Seiten legst.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="api" type="API">
+  Konfiguration für API-Einstellungen. Weitere Informationen zu API-Seiten finden Sie unter [API Components](/de/api-playground/demo).
+
+  <Expandable title="API">
+    <ResponseField name="baseUrl" type="string">
+      Die Basis-URL für alle API-Endpunkte. Wenn `baseUrl` ein Array ist, stehen mehrere Basis-URL-Optionen zur Verfügung, zwischen denen Nutzer umschalten können.
+    </ResponseField>
+
+    <ResponseField name="auth" type="Auth">
+      <Expandable title="Auth">
+        <ResponseField name="method" type="&#x22;bearer&#x22; | &#x22;basic&#x22; | &#x22;key&#x22;">
+          Die Authentifizierungsstrategie, die für alle API-Endpunkte verwendet wird.
+        </ResponseField>
+
+        <ResponseField name="name" type="string">
+          Der Name des Authentifizierungsparameters, der im API-Playground verwendet wird.
+
+          Wenn die Methode `basic` ist, sollte das Format `[usernameName]:[passwordName]` lauten.
+        </ResponseField>
+
+        <ResponseField name="inputPrefix" type="string">
+          Der Standardwert, der als Präfix für das Eingabefeld der Authentifizierung vorgesehen ist.
+
+          Z. B. wenn ein `inputPrefix` von `AuthKey` festgelegt ist, wäre der Standardwert des Authentifizierungsfelds `AuthKey`.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="playground" type="Playground">
+      Konfigurationen für den API-Playground
+
+      <Expandable title="Playground">
+        <ResponseField name="mode" default="show" type="&#x22;show&#x22; | &#x22;simple&#x22; | &#x22;hide&#x22;">
+          Ob der Playground angezeigt, ausgeblendet oder nur der Endpunkt ohne zusätzliche Benutzerinteraktion dargestellt wird (`simple`).
+
+          Weitere Informationen finden Sie in den [Playground-Anleitungen](/de/api-playground/demo).
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+
+    <ResponseField name="maintainOrder" type="boolean">
+      Das Aktivieren dieses Flags stellt sicher, dass die Schlüsselreihenfolge auf OpenAPI-Seiten der im OpenAPI-File definierten Reihenfolge entspricht.
+
+      <Warning>Dieses Verhalten wird bald standardmäßig aktiviert; dieses Feld wird dann als veraltet gelten.</Warning>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="openapi" type="string | string[]">
+  Ein String oder ein Array von Strings mit URL(s) oder relativen Pfad(en), die auf Ihre
+  OpenAPI-Datei verweisen.
+
+  Beispiele:
+
+  <CodeGroup>
+    ```json Absolute
+    "openapi": "https://example.com/openapi.json"
+    ```
+
+    ```json Relative
+    "openapi": "/openapi.json"
+    ```
+
+    ```json Multiple
+    "openapi": ["https://example.com/openapi1.json", "/openapi2.json", "/openapi3.json"]
+    ```
+  </CodeGroup>
+</ResponseField>
+
+<ResponseField name="footerSocials" type="FooterSocials">
+  Ein Objekt mit Social-Media-Konten, bei dem das key:property-Paar die Social-Media-Plattform und die Konto-URL repräsentiert.
+
+  Beispiel:
+
+  ```json
+  {
+    "x": "https://x.com/mintlify",
+    "website": "https://mintlify.com"
+  }
+  ```
+
+  <Expandable title="FooterSocials">
+    <ResponseField name="[key]" type="string">
+      Einer der folgenden Werte: `website`, `facebook`, `x`, `discord`, `slack`, `github`, `linkedin`, `instagram`, `hacker-news`
+
+      Beispiel: `x`
+    </ResponseField>
+
+    <ResponseField name="property" type="string">
+      Die URL zur Social-Media-Plattform.
+
+      Beispiel: `https://x.com/mintlify`
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="feedback" type="Feedback">
+  Konfigurationen zum Aktivieren von Feedback-Schaltflächen
+
+  <Expandable title="Feedback">
+    <ResponseField name="suggestEdit" type="boolean" default="false">
+      Aktiviert eine Schaltfläche, mit der Nutzer Änderungen per Pull Request vorschlagen können
+    </ResponseField>
+
+    <ResponseField name="raiseIssue" type="boolean" default="false">
+      Aktiviert eine Schaltfläche, mit der Nutzer ein Problem zur Dokumentation melden können
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="modeToggle" type="ModeToggle">
+  Passe den Dark-Mode-Umschalter an.
+
+  <Expandable title="ModeToggle">
+    <ResponseField name="default" type={'"light" or "dark"'}>
+      Lege fest, ob neuen Nutzerinnen und Nutzern standardmäßig der Light- oder Dark-Mode angezeigt wird. Ist kein Wert gesetzt, verwenden wir den Modus des Betriebssystems.
+    </ResponseField>
+
+    <ResponseField name="isHidden" type="boolean" default="false">
+      Auf true setzen, um den Light/Dark-Mode-Umschalter auszublenden. Du kannst `isHidden` mit `default` kombinieren, um deine Doku ausschließlich im Light- oder Dark-Mode zu erzwingen. Zum Beispiel:
+
+      <CodeGroup>
+        ```json Only Dark Mode
+        "modeToggle": {
+          "default": "dark",
+          "isHidden": true
+        }
+        ```
+
+        ```json Only Light Mode
+        "modeToggle": {
+          "default": "light",
+          "isHidden": true
+        }
+        ```
+      </CodeGroup>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="backgroundImage" type="string">
+  Ein Hintergrundbild, das hinter jeder Seite angezeigt wird. Beispiel siehe
+  [Infisical](https://infisical.com/docs) und [FRPC](https://frpc.io).
+</ResponseField>

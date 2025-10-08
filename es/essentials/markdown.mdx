@@ -1,0 +1,112 @@
+---
+title: 'Sintaxis de Markdown'
+description: 'Texto, títulos y estilos en Markdown estándar'
+icon: 'text-size'
+---
+
+<div id="titles">
+  ## Títulos
+</div>
+
+Lo más adecuado para encabezados de sección.
+
+```md
+<div id="titles">
+  ## Títulos
+</div>
+
+```
+
+
+<div id="subtitles">
+  ### Subtítulos
+</div>
+
+Se recomienda para encabezados de subsección.
+
+```md
+<div id="subtitles">
+  ### Subtítulos
+</div>
+
+```
+
+<Tip>
+  Cada **título** y **subtítulo** crea un ancla y también aparece en la tabla de contenidos a la derecha.
+</Tip>
+
+
+<div id="text-formatting">
+  ## Formato de texto
+</div>
+
+Compatibilizamos la mayoría del formato de Markdown. Simplemente agrega `**`, `_` o `~` alrededor del texto para formatearlo.
+
+| Estilo        | Cómo escribirlo      | Resultado         |
+| ------------- | -------------------- | ----------------- |
+| Negrita       | `**bold**`           | **bold**          |
+| Cursiva       | `_italic_`           | _italic_          |
+| Tachado       | `~strikethrough~`    | ~strikethrough~   |
+
+Puedes combinarlos. Por ejemplo, escribe `**_bold and italic_**` para obtener texto **_bold and italic_**.
+
+Debes usar HTML para escribir texto en superíndice y subíndice. Es decir, agrega `<sup>` o `<sub>` alrededor de tu texto.
+
+| Tamaño de texto | Cómo escribirlo             | Resultado                |
+| --------------- | --------------------------- | ------------------------ |
+| Superíndice     | `<sup>superscript</sup>`    | <sup>superscript</sup>   |
+| Subíndice       | `<sub>subscript</sub>`      | <sub>subscript</sub>     |
+
+<div id="linking-to-pages">
+  ## Enlace a páginas
+</div>
+
+Puedes añadir un enlace envolviendo el texto en `[]()`. Escribirías `[link to google](https://google.com)` para [link to google](https://google.com).
+
+Los enlaces a páginas de tu documentación deben ser relativos a la raíz. Básicamente, debes incluir toda la ruta de la carpeta. Por ejemplo, `[link to text](/writing-content/text)` enlaza a la página “Text” en nuestra sección de componentes.
+
+Los enlaces relativos como `[link to text](../text)` se abrirán más lentamente porque no podemos optimizarlos con la misma facilidad.
+
+<div id="blockquotes">
+  ## Citas en bloque
+</div>
+
+<div id="singleline">
+  ### En una sola línea
+</div>
+
+Para crear una cita en bloque, agrega un `>` delante de un párrafo.
+
+> Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
+
+```md
+> Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
+```
+
+
+<div id="multiline">
+  ### Varias líneas
+</div>
+
+> Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
+>
+> La bruja le indicó que limpiara las ollas y calderos, barriera el suelo y mantuviera el fuego alimentado con leña.
+
+```md
+> Dorothy la siguió a través de muchas de las hermosas habitaciones de su castillo.
+>
+> La Bruja le ordenó limpiar las ollas y teteras, barrer el suelo y mantener el fuego alimentado con leña.
+```
+
+
+<div id="latex">
+  ### LaTeX
+</div>
+
+Mintlify admite [LaTeX](https://www.latex-project.org) mediante el componente Latex.
+
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```

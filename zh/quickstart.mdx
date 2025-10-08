@@ -1,0 +1,90 @@
+---
+title: "快速上手 Yay"
+description: "几分钟内开始构建优秀的文档"
+---
+
+<div id="get-started-in-three-steps">
+  ## 三步上手
+</div>
+
+在本地运行你的文档站点，并完成首次自定义。
+
+<div id="step-1-set-up-your-local-environment">
+  ### 步骤 1：设置本地环境
+</div>
+
+<AccordionGroup>
+  <Accordion icon="copy" title="在本地克隆文档">
+    在入门过程中，如果你还没有文档仓库，你会基于文档内容创建一个 GitHub 仓库。你可以在[仪表板](https://dashboard.mintlify.com)中找到该仓库的链接。
+
+    要在本地克隆该仓库以便修改并预览文档，请参考 GitHub 文档中的[克隆仓库](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)指南。
+  </Accordion>
+
+  <Accordion icon="rectangle-terminal" title="启动预览服务器">
+    1. 安装 Mintlify CLI：`npm i -g mint`
+    2. 进入文档目录并运行：`mint dev`
+    3. 打开 `http://localhost:3000` 实时查看文档
+
+    <Tip>编辑文件时，预览会自动更新。</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-2-deploy-your-changes">
+  ### 步骤 2：部署你的更改
+</div>
+
+<AccordionGroup>
+  <Accordion icon="github" title="安装我们的 GitHub 应用">
+    在你的[仪表盘](https://dashboard.mintlify.com/settings/organization/github-app)中安装 Mintlify GitHub 应用。
+
+    我们的 GitHub 应用会自动将你的更改部署到文档站点，因此你无需手动管理部署。
+  </Accordion>
+
+  <Accordion icon="palette" title="更新站点名称和配色">
+    作为第一次修改，我们来更新文档站点的名称和配色。
+
+    1. 在编辑器中打开 `docs.json`。
+    2. 将 `"name"` 字段改为你的项目名称。
+    3. 更新 `"colors"` 以匹配你的品牌。
+    4. 保存后，前往 `http://localhost:3000` 即可即时查看变更。
+
+    <Tip>尝试更改主色，立刻就能看出不同！</Tip>
+  </Accordion>
+</AccordionGroup>
+
+<div id="step-3-go-live">
+  ### 步骤 3：上线
+</div>
+
+<Accordion icon="rocket" title="发布文档">
+  1. 提交并推送更改。
+  2. 文档会在几秒内更新并上线！
+</Accordion>
+
+<div id="next-steps">
+  ## 下一步
+</div>
+
+现在你的文档已运行，来探索这些关键功能：
+
+<CardGroup cols={2}>
+  <Card title="编写内容" icon="pen-to-square" href="/zh/essentials/markdown">
+    学习 MDX 语法，开始撰写文档。
+  </Card>
+
+  <Card title="自定义样式" icon="palette" href="/zh/essentials/settings">
+    让文档与品牌高度契合。
+  </Card>
+
+  <Card title="添加代码示例" icon="square-code" href="/zh/essentials/code">
+    插入带语法高亮的代码块。
+  </Card>
+
+  <Card title="API 文档" icon="code" href="/zh/api-reference/introduction">
+    基于 OpenAPI 规范自动生成 API 文档。
+  </Card>
+</CardGroup>
+
+<Note>
+  **需要帮助？** 查看我们的[完整文档](https://mintlify.com/docs)或加入我们的[社区](https://mintlify.com/community)。
+</Note>
